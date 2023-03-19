@@ -1,0 +1,108 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.0.1'
+	id 'io.spring.dependency-management' version '1.1.0'
+
+	// querydsl관련 명령어를 gradle탭에 생성해준다. (권장사항)
+	id "com.ewerk.gradle.plugins.querydsl" version "1.0.10"
+}
+
+group = 'shop.wesellbuy'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	compileOnly 'org.projectlombok:lombok'
+	runtimeOnly 'com.h2database:h2'
+	runtimeOnly 'com.mysql:mysql-connector-j'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	// build 간단하게 처리
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+	// 'sql 파라미터 보기' 라이브러리
+//	implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.5.6'
+	implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.5.8'
+
+	// === QueryDsl 시작 ===
+
+	// == 스프링 부트 3.0 이상 ==
+	implementation 'com.querydsl:querydsl-jpa:5.0.0:jakarta'
+	annotationProcessor "com.querydsl:querydsl-apt:${dependencyManagement.importedProperties['querydsl.version']}:jakarta"
+
+//	// == 스프링 부트 3.0 미만 ==
+//	implementation 'com.querydsl:querydsl-jpa'
+//	annotationProcessor "com.querydsl:querydsl-apt:${dependencyManagement.importedProperties['querydsl.version']}:jpa"
+
+	annotationProcessor "jakarta.annotation:jakarta.annotation-api"
+	annotationProcessor "jakarta.persistence:jakarta.persistence-api"
+
+	// === QueryDsl 끝 ===
+
+	// === swagger 시작 ===
+
+	implementation 'io.springfox:springfox-swagger2:2.9.2'
+	implementation 'io.springfox:springfox-swagger-ui:2.9.2'
+
+	// === swagger 끝 ===
+
+	// test lombok 사용 시작 //
+
+	testCompileOnly 'org.projectlombok:lombok' // 테스트 의존성 추가
+	testAnnotationProcessor 'org.projectlombok:lombok' // 테스트 의존성 추가
+
+	// test lombok 사용 끝 //
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
+// === Querydsl 빌드 옵션 (선택사항) 시작 ===
+
+def querydslDir = "$buildDir/generated/querydsl"
+
+querydsl {
+	jpa = true
+	querydslSourcesDir = querydslDir
+}
+
+sourceSets {
+	main.java.srcDir querydslDir
+}
+
+compileQuerydsl {
+	options.annotationProcessorPath = configurations.querydsl
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+	querydsl.extendsFrom compileClasspath
+}
+
+/**
+ * comileQuerydsl.doFirst 추가
+ *  - 새로 빌드시 생성
+ */
+compileQuerydsl {
+	if(file(querydslDir).exists() )
+		delete(file(querydslDir))
+}
+
+// === Querydsl 빌드 옵션 (선택사항) 끝 ===

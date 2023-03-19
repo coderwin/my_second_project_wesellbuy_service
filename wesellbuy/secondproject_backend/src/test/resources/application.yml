@@ -1,0 +1,53 @@
+
+# test 개발 환경
+spring:
+  profiles:
+    active: test
+
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/wesellbuy/test
+    username:
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+#        show_sql: true # System.out sql 실힝
+        format_sql: true # sql 모양을 예쁘게 출력
+#        highlight_sql: true # 쿼리에 색을 넣는다
+
+        default_batch_fetch_size: 1000 # 페이징 처리 가능하게(엔티티 컬렉션 페치 조인시)
+
+      open-in-view: true #지연 로딩 view, conrollerRkwl 가능(true)/불가능(false)
+
+  # 파일 업로드 사이즈 제한
+  servlet.multipart:
+    max-file-size: 1MB # 파일 하나의 최대 사이즈
+    max-request-size: 10MB # 멀티팔트 요청 하나에 업로드한 파일 총 사이즈
+
+    enabled: true # 멀티파트 데이터 처리 설정(true/ false)
+
+
+logging.level:
+  org.hibernate:
+    SQL: debug # logger를 통해 하이버네이트 실행 sql 확인
+#    type: trace # sql 파라미터 값을 확인 가능
+
+#decorator:
+#  datasource:
+#    p6spy:
+#      enable-logging: true
+
+# 파일 업로드 경로 설정
+file:
+  selfPicture.dir: "C:/my_project_2/upload/images/member/" # 회원 이미지
+  recommendationPicture.dir: "C:/my_project_2/upload/images/recommendation/" # 추천합니다글 이미지
+  itemPicture.dir: C:/my_project_2/upload/images/item/ # 상품 이미지
+#폴더 생성 경로
+directory:
+  selfPicture.dir: "C:/my_project_2/upload/images/member" # 회원 이미지
+  recommendationPicture.dir: "C:/my_project_2/upload/images/recommendation" # 추천합니다글 이미지
+  itemPicture.dir: C:/my_project_2/upload/images/item # 상품 이미지

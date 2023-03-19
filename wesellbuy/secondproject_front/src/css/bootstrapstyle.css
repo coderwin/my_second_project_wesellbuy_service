@@ -1,0 +1,9 @@
+/* 캐러셀 이미지 크기 변경 */
+/* home 캐러셀 */
+.carousel-inner > .carousel-item > img {
+  top: 0;
+  left: 0;
+  height: 300px;
+  min-width: 100%;
+  min-height: 100px;
+}
