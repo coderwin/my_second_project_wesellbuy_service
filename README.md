@@ -6,8 +6,14 @@ wesellbuy 프로젝트 개인 토이프로젝트(service_part)입니다.<br />
 :bulb: 기간 : 10/16 ~ 11/20<br />
 
 <!-- 사용 기술 -->
-:dart: Used Statck : Java, Spring Boot, Spring MVC, JPA, QueryDSL, Mysql, H2, thymeleaf, amazon-EC2(Linux), amazon-route53, Git, GitHub, IntelliJ<br />
-
+<div>
+:dart: Used Statck<br />
+  Back: Java 17, Spring Boot, Spring MVC, JPA, QueryDsl, Data JPA<br />
+  Front: react.js<br />
+  DB: MySQL, H2(dev)<br />
+  IDE: IntelliJ, VS Code, Git Bash<br />
+  SVC: Github <br />
+</div>
 <!-- 사이트 링크 연결 -->
 
 <!-- detail 링크 연결 -->
