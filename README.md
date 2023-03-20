@@ -7,7 +7,8 @@ wesellbuy 프로젝트 개인 토이프로젝트(service_part)입니다.<br />
 
 <!-- 사용 기술 -->
 <div>
-:dart: Used Statck<br />
+  <h3>:dart: Used Statck</h3>
+  
   &nbsp;&nbsp;&nbsp;&nbsp;Back: Java 17, Spring Boot, Spring MVC, JPA, QueryDsl, Data JPA<br />
   &nbsp;&nbsp;&nbsp;&nbsp;Front: react.js<br />
   &nbsp;&nbsp;&nbsp;&nbsp;DB: MySQL, H2(dev)<br />
