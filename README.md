@@ -1,7 +1,9 @@
 # my_second_project_wesellbuy_service
 <!-- 설명 -->
-wesellbuy 개인 토이프로젝트(service_part)입니다.<br />
-회원, 배달원, 관리자로 구성된 온라인 유통 플랫폼입니다.<br/>
+<div>
+&nbsp;&nbsp;&nbsp;&nbsp;wesellbuy 개인 토이프로젝트(service_part)입니다.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;회원, 배달원, 관리자로 구성된 온라인 유통 플랫폼입니다.<br/>
+</div>
 <br />
 
 <!-- 프로젝트 기간 -->
