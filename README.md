@@ -13,11 +13,11 @@
 <div>
   <h3>:dart: Used Statck</h3>
   
-  &nbsp;&nbsp;&nbsp;&nbsp;Back: Java 17, Spring Boot, Spring MVC, JPA, QueryDsl, Data JPA<br />
-  &nbsp;&nbsp;&nbsp;&nbsp;Front: react.js<br />
-  &nbsp;&nbsp;&nbsp;&nbsp;DB: MySQL, H2(dev)<br />
-  &nbsp;&nbsp;&nbsp;&nbsp;IDE: IntelliJ, VS Code, Git Bash<br />
-  &nbsp;&nbsp;&nbsp;&nbsp;SVC: Github <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;:arrow_forward:&nbsp;&nbsp;Back: Java 17, Spring Boot, Spring MVC, JPA, QueryDsl, Data JPA<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;:arrow_forward:&nbsp;&nbsp;Front: react.js<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;:arrow_forward:&nbsp;&nbsp;DB: MySQL, H2(dev)<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;:arrow_forward:&nbsp;&nbsp;IDE: IntelliJ, VS Code, Git Bash<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;:arrow_forward:&nbsp;&nbsp;SVC: Github <br />
 </div>
 <!-- 사이트 링크 연결 -->
 
