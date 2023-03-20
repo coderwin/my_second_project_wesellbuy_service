@@ -1,6 +1,6 @@
 # my_second_project_wesellbuy_service
 <!-- 설명 -->
-wesellbuy 프로젝트 개인 토이프로젝트(service_part)입니다.<br />
+wesellbuy 개인 토이프로젝트(service_part)입니다.<br />
 
 <!-- 프로젝트 기간 -->
 :bulb: 기간 : 10/16 ~ 11/20<br />
@@ -28,7 +28,7 @@ wesellbuy 프로젝트 개인 토이프로젝트(service_part)입니다.<br />
 <!-- backend, front 기록 -->
 <div>
   <h3>
-    backend, frontend 기록 
+    :notebook: backend, frontend 기록 
   </h3>
   <h4>
     &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/coderwin/my_second_project_wesellbuy_backend.git" 
