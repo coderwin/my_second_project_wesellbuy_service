@@ -1,2 +1,38 @@
 # my_second_project_wesellbuy_service
-wesellbuy 프로젝트 service_part 입니다.
+<!-- 설명 -->
+wesellbuy 프로젝트 개인 토이프로젝트(service_part)입니다.<br />
+
+<!-- 프로젝트 기간 -->
+:bulb: 기간 : 10/16 ~ 11/20<br />
+
+<!-- 사용 기술 -->
+:dart: Used Statck : Java, Spring Boot, Spring MVC, JPA, QueryDSL, Mysql, H2, thymeleaf, amazon-EC2(Linux), amazon-route53, Git, GitHub, IntelliJ<br />
+
+<!-- 사이트 링크 연결 -->
+
+<!-- detail 링크 연결 -->
+<h3>
+  <a href="https://puzzled-detail-b29.notion.site/wesellbye-62d6d16150e54d8d8d098bb1fcc62583" 
+     title="프로젝트 설명">
+    :link: 프로젝트 설명
+  </a>
+</h3>
+
+<!-- backend, front 기록 -->
+<h3>
+  backend, frontend 기록 
+</h3>
+&nbsp;&npsp;
+<h4>
+  <a href="https://github.com/coderwin/my_second_project_wesellbuy_backend.git" 
+     title="backend part 기록">
+    :link: backend part
+  </a>
+</h4>
+&nbsp;&npsp;
+<h4>
+  <a href="https://github.com/coderwin/my_second_project_wesellbuy_front.git" 
+     title="frontend part 기록">
+    :link: frontend part
+  </a>
+</h4>
