@@ -31,13 +31,13 @@ wesellbuy 프로젝트 개인 토이프로젝트(service_part)입니다.<br />
     backend, frontend 기록 
   </h3>
   <h4>
-    <a href="https://github.com/coderwin/my_second_project_wesellbuy_backend.git" 
+    &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/coderwin/my_second_project_wesellbuy_backend.git" 
        title="backend part 기록">
       :link: backend part
     </a>
   </h4>
   <h4>
-    <a href="https://github.com/coderwin/my_second_project_wesellbuy_front.git" 
+    &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/coderwin/my_second_project_wesellbuy_front.git" 
        title="frontend part 기록">
       :link: frontend part
     </a>
