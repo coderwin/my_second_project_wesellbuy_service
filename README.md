@@ -1,6 +1,8 @@
 # my_second_project_wesellbuy_service
 <!-- 설명 -->
 wesellbuy 개인 토이프로젝트(service_part)입니다.<br />
+회원, 배달원, 관리자로 구성된 온라인 유통 플랫폼입니다.<br/>
+<br />
 
 <!-- 프로젝트 기간 -->
 :bulb: 기간 : 2023-01-11 ~ 2023-03-19 (44일)<br />
