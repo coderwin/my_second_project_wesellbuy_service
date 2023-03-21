@@ -159,7 +159,7 @@ public class ItemLikesServiceTest {
 
         // when
         // 삭제하기
-        itemLikesService.delete(itemNum2);
+        itemLikesService.delete(itemNum2, member.getNum());
 
         // then
         List<ItemLikesListForm> result = itemLikesService.selectList(member.getNum());
