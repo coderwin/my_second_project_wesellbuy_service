@@ -73,7 +73,7 @@ const OrderForm = ({data, numPosition, datasLength, totalPages, searchCond}) => 
   // 서버로 취소 요청
   async function cancel(num) {
     return await axios.delete(
-      `http://15.165.217.246:8080/orders/${num}`,
+      `http://52.79.48.234:8080/orders/${num}`,
       {
         withCredentials: true
       }

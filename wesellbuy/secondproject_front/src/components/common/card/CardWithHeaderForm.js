@@ -125,7 +125,7 @@ const CardWithHeaderForm = ({data, likesList, memberInfo, addItemLikesList, coun
   async function deleteLikes(boardNum) {
     // 서버에 좋아요 삭제 요청하기
     return await axios.delete(
-      `http://15.165.217.246:8080/items/${boardNum}/likes`,
+      `http://52.79.48.234:8080/items/${boardNum}/likes`,
       {
         withCredentials: true
       }
@@ -135,7 +135,7 @@ const CardWithHeaderForm = ({data, likesList, memberInfo, addItemLikesList, coun
   async function saveLikes(boardNum) {
     // 서버에 좋아요 등록 요청하기
     return await axios.post(
-      `http://15.165.217.246:8080/items/${boardNum}/likes`,
+      `http://52.79.48.234:8080/items/${boardNum}/likes`,
       {},
       {
         withCredentials: true
@@ -145,7 +145,7 @@ const CardWithHeaderForm = ({data, likesList, memberInfo, addItemLikesList, coun
   // 이미지 src 만들기
   function createSrc(storedFileName) {
     if(storedFileName) {
-      return `http://15.165.217.246:8080/items/images/${storedFileName}`;
+      return `http://52.79.48.234:8080/items/images/${storedFileName}`;
     }
   }
   // 상세보기 클릭했을 때

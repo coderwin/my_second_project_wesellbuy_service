@@ -120,7 +120,7 @@ const JoinForm = () => {
     // 데이터 서버로 보내기
     await axios({
         method: 'post',
-        url: 'http://15.165.217.246:8080/members',
+        url: 'http://52.79.48.234:8080/members',
         data: formData,
         headers: {
           "Content-Type": "multipart/form-data"
@@ -178,7 +178,7 @@ const JoinForm = () => {
     const {id} = data;
     // 서버에 아이디 중복확인 요청
     axios.get(
-      "http://15.165.217.246:8080/members/id/check", 
+      "http://52.79.48.234:8080/members/id/check", 
       {
         params: {
           id

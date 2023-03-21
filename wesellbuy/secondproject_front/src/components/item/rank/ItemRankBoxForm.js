@@ -42,7 +42,7 @@ const ItemRankBoxForm = () => {
   // 서버에서 상품 랭크(순위) 불러오기
   async function getItemRankList() {
     return await axios.get(
-      "http://15.165.217.246:8080/items/rank/v1"
+      "http://52.79.48.234:8080/items/rank/v1"
     );
   }
   // 상품명을 클릭했을 때

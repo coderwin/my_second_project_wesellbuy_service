@@ -132,7 +132,7 @@ const OrderSaveForm = () => {
   // 서버로 주문등록하기
   async function save(paidMoney) {
     return await axios.post(
-      "http://15.165.217.246:8080/orders",
+      "http://52.79.48.234:8080/orders",
       {
         data: readyOrder,
         paidMoney: paidMoney

@@ -124,14 +124,14 @@ const ItemDetailForm = () => {
   }
   // 이미지 src 만들기
   function createSrc(storedFileName) {
-    return `http://15.165.217.246:8080/items/images/${storedFileName}`;
+    return `http://52.79.48.234:8080/items/images/${storedFileName}`;
   }
   // 상품 상세보기 데이터 불러오기
   async function getItemDetailInfo() {
     // 서버에 item detail 요청하기
     // 누구든 볼수 있음 - 인증 불필요
     return await axios.get(
-      `http://15.165.217.246:8080/items/${itemNum}`
+      `http://52.79.48.234:8080/items/${itemNum}`
     );
   }
 
