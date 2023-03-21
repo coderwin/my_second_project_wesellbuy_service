@@ -111,7 +111,7 @@ const OrderDetailForm = () => {
     // 누구든 볼수 없음 - 인증 필요
     // CORS 정책을 따라야 할 듯
     return await axios.get(
-      `http://localhost:8080/orders/${boardNum}`,
+      `http://15.165.217.246:8080/orders/${boardNum}`,
       {
         withCredentials: true
       }

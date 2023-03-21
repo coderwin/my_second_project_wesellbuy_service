@@ -55,7 +55,7 @@ const IdSearchForm = () => {
         setLoding(true);
         // json으로 바꾸기
         return await axios.get(
-            "http://localhost:8080/members/find/id",
+            "http://15.165.217.246:8080/members/find/id",
             {params: data}
         );
     }

@@ -49,7 +49,7 @@ const CardForm = ({data})=> {
   }
   // 이미지 src 만들기 -> 현재 사용 안 함
   function createSrc(storedFileName) {
-    return `http://localhost:8080/recommendations/images/${storedFileName}`;
+    return `http://15.165.217.246:8080/recommendations/images/${storedFileName}`;
   }
   // 상세보기 클릭했을 때
   // 추천합니다 상세보기로 간다

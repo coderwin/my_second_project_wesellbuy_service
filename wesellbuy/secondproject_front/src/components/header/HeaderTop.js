@@ -39,7 +39,7 @@ const HeaderTop = () => {
         changeLoding(true);
         // 서버 로그아웃 하기
         const {data} = await axios.post(
-            "http://localhost:8080/members/logout"
+            "http://15.165.217.246:8080/members/logout"
         );
         return data;
     }

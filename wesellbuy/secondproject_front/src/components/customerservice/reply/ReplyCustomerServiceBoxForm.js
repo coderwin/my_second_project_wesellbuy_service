@@ -25,7 +25,7 @@ const ReplyCustomerServiceBoxForm = ({replyFormList}) => {
   // 서버로 댓글 수정 데이터 보내기
   async function updateReply(boardNum, replyNum, content) {
     return await axios.put(
-      `http://localhost:8080/customerservices/${boardNum}/replies/${replyNum}`,
+      `http://15.165.217.246:8080/customerservices/${boardNum}/replies/${replyNum}`,
       {
         content: content
       },
@@ -37,7 +37,7 @@ const ReplyCustomerServiceBoxForm = ({replyFormList}) => {
   // 서버로 댓글 삭제 요청 보내기
   async function deleteReply(boardNum, replyNum) {
     return await axios.delete(
-      `http://localhost:8080/customerservices/${boardNum}/replies/${replyNum}`,
+      `http://15.165.217.246:8080/customerservices/${boardNum}/replies/${replyNum}`,
       {
         withCredentials: true
       }
@@ -47,7 +47,7 @@ const ReplyCustomerServiceBoxForm = ({replyFormList}) => {
   // 서버에 댓글 등록 요청하기
   async function saveReply(boardNum, data) {
     return await axios.post(
-      `http://localhost:8080/customerservices/${boardNum}/replies`,
+      `http://15.165.217.246:8080/customerservices/${boardNum}/replies`,
       data,
       {
         withCredentials: true

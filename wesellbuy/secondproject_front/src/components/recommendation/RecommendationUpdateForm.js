@@ -101,14 +101,14 @@ const RecommendationUpdateForm = () => {
   }
   // 이미지 src 만들기
   function createSrc(storedFileName) {
-    return `http://localhost:8080/recommendations/images/${storedFileName}`;
+    return `http://15.165.217.246:8080/recommendations/images/${storedFileName}`;
   }
   // 추천합니다글 상세보기 데이터 불러오기
   async function getRecommendationDetailInfo(boardNum) {
     // 서버에 recommendation detail 요청하기
     // 누구든 볼수 있음 - 인증 불필요
     return await axios.get(
-      `http://localhost:8080/recommendations/${boardNum}`
+      `http://15.165.217.246:8080/recommendations/${boardNum}`
     );
   }
   // input에 데이터 바뀌면 data 데이터 변경한다
@@ -188,7 +188,7 @@ const RecommendationUpdateForm = () => {
   async function update(formData, boardNum) {
 
     return await axios.put(
-      `http://localhost:8080/recommendations/${boardNum}`,
+      `http://15.165.217.246:8080/recommendations/${boardNum}`,
       formData,
       {
         headers: {
@@ -286,7 +286,7 @@ const RecommendationUpdateForm = () => {
   async function deleteImage(boardNum, pictureNum) {
 
     return await axios.delete(
-      `http://localhost:8080/recommendations/${boardNum}/pictures/${pictureNum}`,
+      `http://15.165.217.246:8080/recommendations/${boardNum}/pictures/${pictureNum}`,
       {
         withCredentials: true
       }
