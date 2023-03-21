@@ -1,12 +1,13 @@
+
 plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.0.1'
 	id 'io.spring.dependency-management' version '1.1.0'
 
-	// querydsl관련 명령어를 gradle탭에 생성해준다. (권장사항)
-	id "com.ewerk.gradle.plugins.querydsl" version "1.0.10"
+	// querydsl관련 명령어를 gradle탭에 생성해준다. (권장사항) -> Querydsl 플러그인 사용 X(배포에서)
+//	id "com.ewerk.gradle.plugins.querydsl" version "1.0.10"
 }
-
+	
 group = 'shop.wesellbuy'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
@@ -72,37 +73,41 @@ tasks.named('test') {
 	useJUnitPlatform()
 }
 
-// === Querydsl 빌드 옵션 (선택사항) 시작 ===
+// === Querydsl 빌드 옵션 (선택사항) 시작 === => 현재 사용 안 함
 
-def querydslDir = "$buildDir/generated/querydsl"
-
-querydsl {
-	jpa = true
-	querydslSourcesDir = querydslDir
-}
-
-sourceSets {
-	main.java.srcDir querydslDir
-}
-
-compileQuerydsl {
-	options.annotationProcessorPath = configurations.querydsl
-}
-
-configurations {
-	compileOnly {
-		extendsFrom annotationProcessor
-	}
-	querydsl.extendsFrom compileClasspath
-}
+//def querydslDir = "$buildDir/generated/querydsl"
+//
+//querydsl {
+//	jpa = true
+//	querydslSourcesDir = querydslDir
+//}
+//
+//sourceSets {
+//	main.java.srcDir querydslDir
+//}
+//
+//compileQuerydsl {
+//	options.annotationProcessorPath = configurations.querydsl
+//}
+//
+//configurations {
+//	compileOnly {
+//		extendsFrom annotationProcessor
+//	}
+//	querydsl.extendsFrom compileClasspath
+//}
 
 /**
  * comileQuerydsl.doFirst 추가
  *  - 새로 빌드시 생성
  */
-compileQuerydsl {
-	if(file(querydslDir).exists() )
-		delete(file(querydslDir))
-}
+//compileQuerydsl {
+//	if(file(querydslDir).exists() )
+//		delete(file(querydslDir))
+//}
 
 // === Querydsl 빌드 옵션 (선택사항) 끝 ===
+
+clean {
+	delete file('src/main/generated')
+}
