@@ -53,7 +53,7 @@ const MemberDetailForm = () => {
     const {num} = JSON.parse(sessionStorage.getItem("LOGIN_MEMBER"));
     // 서버에 회원정보 요청
     return await axios.get(
-      `http://52.79.48.234:8080/members/${num}`,
+      `http://15.164.119.184:8080/members/${num}`,
       {
         withCredentials: true
       }
@@ -73,7 +73,7 @@ const MemberDetailForm = () => {
     } catch(error) {
       // 데이터 가져오기 끝
       setLoding(false);
-      console.log(error);
+      // console.log(error);
       // error Msg 담기
       alert(error.response.data.errMsg);
       setError(error.response.data.errMsg);
@@ -90,7 +90,7 @@ const MemberDetailForm = () => {
   //   console.log(`storedFileName : ${storedFileName}`);
   //   // 서버에 이미지 요청
   //   axios.get(
-  //     `http://52.79.48.234:8080/members/images/${storedFileName}`
+  //     `http://15.164.119.184:8080/members/images/${storedFileName}`
   //   )
   //   .then((response) => {
   //     // 요청 성공
@@ -111,7 +111,7 @@ const MemberDetailForm = () => {
     const {num} = JSON.parse(sessionStorage.getItem("LOGIN_MEMBER"));
     // 서버에 탈퇴요청 보낸다.
     return await axios.delete(
-      `http://52.79.48.234:8080/members/${num}`,
+      `http://15.164.119.184:8080/members/${num}`,
       {
         withCredentials: true
       }
@@ -132,7 +132,7 @@ const MemberDetailForm = () => {
       // data는 null로 만든다.
       setData(null);
       // 탈퇴 성공 메시지 띄우기
-      console.log(result.data.data);
+      // console.log(result.data.data);
       alert(`${result.data.data}`);
       // sessionStorage 비우기
       sessionStorage.clear();
@@ -144,7 +144,7 @@ const MemberDetailForm = () => {
       // loding 상태 false
       setLoding(false);
       console.log("탈퇴 요청 중 에러 발생");
-      console.log(error);
+      // console.log(error);
       // 에러 상태 알리기
       const errMsg = "요청 처리 중 에러 발생";
       setError(errMsg);
@@ -295,7 +295,7 @@ const MemberDetailForm = () => {
             <Row className="d-flex justify-content-center">
               <Form.Label>프로필</Form.Label>
               <Col sm={12}>
-              {data.selfPictureForm ? <Image className="img-responsive profil" roundedCircle src={`http://52.79.48.234:8080/members/images/${data.selfPictureForm.storedFileName}`} /> 
+              {data.selfPictureForm ? <Image className="img-responsive profil" roundedCircle src={`http://15.164.119.184:8080/members/images/${data.selfPictureForm.storedFileName}`} /> 
               : <Image className="profil" roundedCircle src={noImage} />}
               </Col>
             </Row>

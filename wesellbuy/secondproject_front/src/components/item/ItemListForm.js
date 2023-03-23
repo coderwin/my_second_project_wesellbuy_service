@@ -62,7 +62,7 @@ const ItemListForm = () => {
   // 서버에서 상품 랭크(순위) 불러오기
   async function getItemRankList() {
     return await axios.get(
-      "http://52.79.48.234:8080/items/rank/v1"
+      "http://15.164.119.184:8080/items/rank/v1"
     );
   }
   // rankCardDatas에 상품목록 담기
@@ -81,7 +81,7 @@ const ItemListForm = () => {
       setLoding(() => false);
       // 요청 실패
       console.log("요청 실패");
-      console.log(err);
+      // console.log(err);
     }
   }
   
@@ -89,7 +89,7 @@ const ItemListForm = () => {
     // data는 params
   async function getItemList() {
     return await axios.get(
-      "http://52.79.48.234:8080/items",
+      "http://15.164.119.184:8080/items",
       {
         params: data
       }
@@ -112,7 +112,7 @@ const ItemListForm = () => {
       // 요청 실패
       setLoding(false);
       console.log("요청 실패");
-      console.log(err);
+      // console.log(err);
     }
   } 
   // 찾기에 사용
@@ -131,7 +131,7 @@ const ItemListForm = () => {
       // 요청 실패
       setLoding(() => false);
       console.log("요청 실패");
-      console.log(err);
+      // console.log(err);
     }
   } 
   // session에 있는 회원정보 불러오기
@@ -150,7 +150,7 @@ const ItemListForm = () => {
   // 서버에서 회원의 좋아요 목록 불러오기
   async function getLikesList() {
     return await axios.get(
-      "http://52.79.48.234:8080/items/likes",
+      "http://15.164.119.184:8080/items/likes",
       {
         withCredentials: true
       }
@@ -184,13 +184,13 @@ const ItemListForm = () => {
       // 요청 실패
       setLoding(() => false);
       console.log("요청 실패");
-      console.log(err);
+      // console.log(err);
     }
   }
   
   // 검색 데이터 바뀌면 data 변경한다
   function handleDataChange(e) {
-    console.log(`${e.target.name} : ${e.target.value}`);
+    // console.log(`${e.target.name} : ${e.target.value}`);
     setData((data) => {
       return {
       ...data,
@@ -200,7 +200,7 @@ const ItemListForm = () => {
   }
   // page 데이터 바뀌면 data 변경한다
   function handlePageInDataChange(e) {
-    console.log(`${e.target.name} : ${e.target.id}`);
+    // console.log(`${e.target.name} : ${e.target.id}`);
     setData((data) => {
       return {
       ...data,

@@ -36,13 +36,13 @@ const ItemRankBoxForm = () => {
     } catch(err) {
       // 요청 실패
       console.log("요청 실패");
-      console.log(err);
+      // console.log(err);
     }
   }
   // 서버에서 상품 랭크(순위) 불러오기
   async function getItemRankList() {
     return await axios.get(
-      "http://52.79.48.234:8080/items/rank/v1"
+      "http://15.164.119.184:8080/items/rank/v1"
     );
   }
   // 상품명을 클릭했을 때

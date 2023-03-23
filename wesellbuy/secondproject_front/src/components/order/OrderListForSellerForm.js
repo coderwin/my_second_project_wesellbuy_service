@@ -83,7 +83,7 @@ const OrderListForSellerForm = () => {
   // 서버에서 나의 주문 불러오기
   async function getOrderList() {
     return await axios.get(
-      "http://52.79.48.234:8080/orders/seller",
+      "http://15.164.119.184:8080/orders/seller",
       {
         params: data,
         withCredentials: true

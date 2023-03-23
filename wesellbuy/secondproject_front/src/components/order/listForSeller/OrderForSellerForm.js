@@ -74,7 +74,7 @@ const OrderForSellerForm = ({data, numPosition, datasLength, totalPages, searchC
   // 서버로 취소 요청
   async function changeDeliveryStatus(num) {
     return await axios.patch(
-      `http://52.79.48.234:8080/orders/${num}/delivery/seller`,
+      `http://15.164.119.184:8080/orders/${num}/delivery/seller`,
       {},
       {
         withCredentials: true

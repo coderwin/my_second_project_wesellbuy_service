@@ -39,7 +39,7 @@ const HeaderTop = () => {
         changeLoding(true);
         // 서버 로그아웃 하기
         const {data} = await axios.post(
-            "http://52.79.48.234:8080/members/logout"
+            "http://15.164.119.184:8080/members/logout"
         );
         return data;
     }
@@ -51,7 +51,7 @@ const HeaderTop = () => {
             // loding false로 바꾸기
             changeLoding(false);
             // 로그아웃 성공 메시지 출력
-            console.log(result.data);
+            // console.log(result.data);
             // session 아이디 제거하기 - 서버 연결 전 임시로
             sessionStorage.clear();
             // 홈으로
@@ -60,7 +60,7 @@ const HeaderTop = () => {
             setMemberInfo(null);
             
         } catch(error) {
-            console.log(error);
+            // console.log(error);
             const errMsg = "로그아웃 처리중 에러 발생";
             alert(errMsg);
         }

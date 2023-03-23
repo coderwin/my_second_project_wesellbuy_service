@@ -32,7 +32,7 @@ const ItemDetailBoxForm = () => {
   // 서버에서 좋아요 리스트 불러오기
   async function getLikesList() {
     return await axios.get(
-      `http://52.79.48.234:8080/items/likes`,
+      `http://15.164.119.184:8080/items/likes`,
       {
         withCredentials: true
       }
@@ -43,7 +43,7 @@ const ItemDetailBoxForm = () => {
   async function deleteLikes(boardNum, likesNum) {
     // 서버에 좋아요 삭제 요청하기
     return await axios.delete(
-      `http://52.79.48.234:8080/items/${boardNum}/likes`,
+      `http://15.164.119.184:8080/items/${boardNum}/likes`,
       {
         withCredentials: true
       }
@@ -53,7 +53,7 @@ const ItemDetailBoxForm = () => {
   async function saveLikes(boardNum) {
     // 서버에 좋아요 등록 요청하기
     return await axios.post(
-      `http://52.79.48.234:8080/items/${boardNum}/likes`,
+      `http://15.164.119.184:8080/items/${boardNum}/likes`,
       {},
       {
         withCredentials: true
@@ -124,7 +124,7 @@ const ItemDetailBoxForm = () => {
   async function deleteItem() {
     
     return await axios.delete(
-      `http://52.79.48.234:8080/items/${boardNum}`,
+      `http://15.164.119.184:8080/items/${boardNum}`,
       {
         withCredentials: true
       }

@@ -50,12 +50,12 @@ const IdSearchForm = () => {
     }
     // 서버에 아이디 찾기 요청하기
     const findId = async () => {
-        console.log("데이터 요청 중...");
+        // console.log("데이터 요청 중...");
         // 데이터 처리중
         setLoding(true);
         // json으로 바꾸기
         return await axios.get(
-            "http://52.79.48.234:8080/members/find/id",
+            "http://15.164.119.184:8080/members/find/id",
             {params: data}
         );
     }

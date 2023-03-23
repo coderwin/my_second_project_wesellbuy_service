@@ -14,7 +14,7 @@ import { Carousel } from 'react-bootstrap'
  * 
  */
 const ImageForm = ({src}) => {
-  console.log("imageForm : " + src);
+  // console.log("imageForm : " + src);
   return (
     <Carousel.Item>
         <img

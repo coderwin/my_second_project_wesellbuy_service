@@ -132,7 +132,7 @@ const OrderSaveForm = () => {
   // 서버로 주문등록하기
   async function save(paidMoney) {
     return await axios.post(
-      "http://52.79.48.234:8080/orders",
+      "http://15.164.119.184:8080/orders",
       {
         data: readyOrder,
         paidMoney: paidMoney
@@ -145,10 +145,10 @@ const OrderSaveForm = () => {
   // 주문상품 삭제 클릭했을 때
   function handleDeleteBtnClick(e) {
     // 버튼의 id 확인하기
-    console.log(`delete id: ${e.target.id}`);
+    // console.log(`delete id: ${e.target.id}`);
     // datas에서 itemData의 id가 같은 걸 삭제한다(filter)
     const newDatas = datas.filter((data) => data.id !== Number(e.target.id));
-    console.log(newDatas);
+    // console.log(newDatas);
     setDatas(
       datas.filter((data) => data.id !== e.target.id
     ));

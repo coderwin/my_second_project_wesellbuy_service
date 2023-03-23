@@ -21,8 +21,8 @@ const ReplyListForm = ({replyFormList, replies, setReplies, updateReply, deleteR
   // ReplyForm에서 삭제 버튼 눌렀을 때
   // replyFormList에서 reply 삭제하기
   function handleDeleteRepliesChange(replyNum) {
-    console.log(`replyNum : ${replyNum}`);
-    console.log(replyNum);
+    // console.log(`replyNum : ${replyNum}`);
+    // console.log(replyNum);
     // 번호와 일치하는 replyNum을 지워준다.
     setReplies(
       replies.filter((reply) => reply.num !== replyNum)

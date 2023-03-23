@@ -114,7 +114,7 @@ const CustomerServiceSaveForm = () => {
   async function save() {
 
     return await axios.post(
-      "http://52.79.48.234:8080/customerservices",
+      "http://15.164.119.184:8080/customerservices",
       data,
       {
         withCredentials: true

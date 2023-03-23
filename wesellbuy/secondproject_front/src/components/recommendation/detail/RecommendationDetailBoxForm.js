@@ -34,7 +34,7 @@ const RecommendationDetailBoxForm = () => {
   async function deleteRecommendation() {
     
     return await axios.delete(
-      `http://52.79.48.234:8080/recommendations/${boardNum}`,
+      `http://15.164.119.184:8080/recommendations/${boardNum}`,
       {
         withCredentials: true
       }
@@ -61,7 +61,7 @@ const RecommendationDetailBoxForm = () => {
         // 요청 실패
         setLoding(false);
         console.log("요청 실패");
-        console.log(err);
+        // console.log(err);
       }
     }
   }

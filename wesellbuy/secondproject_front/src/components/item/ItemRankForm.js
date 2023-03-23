@@ -46,7 +46,7 @@ const ItemRankForm = () => {
     // 숫자만 추출하기
     // pattern에 걸린 것은 ""로 처리하기
     const result = value.replace(pattern, "");
-    console.log(`result : ${result}`);
+    // console.log(`result : ${result}`);
 
     return result;
   }

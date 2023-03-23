@@ -80,7 +80,7 @@ const CustomerServiceListForm = () => {
   // 서버에서 나의 고객지원글 불러오기
   async function getCustomerServiceList() {
     return await axios.get(
-      "http://52.79.48.234:8080/customerservices",
+      "http://15.164.119.184:8080/customerservices",
       {
         params: data,
         withCredentials: true

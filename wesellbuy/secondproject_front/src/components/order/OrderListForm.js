@@ -57,7 +57,7 @@ const OrderListForm = () => {
       setLoding(false);
       // 요청 실패
       console.log("요청 실패");
-      console.log(err);
+      // console.log(err);
     }
   }
   // datas에 주문 목록에 담기 for search
@@ -83,7 +83,7 @@ const OrderListForm = () => {
   // 서버에서 나의 주문 불러오기
   async function getOrderList() {
     return await axios.get(
-      "http://52.79.48.234:8080/orders",
+      "http://15.164.119.184:8080/orders",
       {
         params: data,
         withCredentials: true
@@ -99,7 +99,7 @@ const OrderListForm = () => {
   }
   // page 데이터 바뀌면 data 변경한다
   function handlePageInDataChange(e) {
-    console.log(`${e.target.name} : ${e.target.id}`);
+    // console.log(`${e.target.name} : ${e.target.id}`);
     setData((data) => {
       return {
       ...data,
