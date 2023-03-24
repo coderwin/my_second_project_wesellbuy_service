@@ -39,7 +39,7 @@ const HeaderTop = () => {
         changeLoding(true);
         // 서버 로그아웃 하기
         const {data} = await axios.post(
-            "http://15.164.119.184:8080/members/logout"
+            "http://3.35.147.170:8080/members/logout"
         );
         return data;
     }
@@ -94,6 +94,9 @@ const HeaderTop = () => {
                 </Nav.Item>
                 <Nav.Item>
                     <Nav.Link onClick={handleJoinClick}>회원가입</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link onClick={handleOrderClick}>장바구니</Nav.Link>
                 </Nav.Item>
             </Nav>
         );  

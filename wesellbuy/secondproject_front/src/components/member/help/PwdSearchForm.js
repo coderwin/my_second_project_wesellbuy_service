@@ -54,7 +54,7 @@ const PwdSearchForm = () => {
         setLoding(true);
         // json으로 바꾸기
         return await axios.get(
-            "http://15.164.119.184:8080/members/find/pwd",
+            "http://3.35.147.170:8080/members/find/pwd",
             {params: data}
         );
     }

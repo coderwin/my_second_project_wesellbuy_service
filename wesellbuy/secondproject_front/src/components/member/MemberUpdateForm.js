@@ -62,7 +62,7 @@ const MemberUpdateForm = () => {
     const {num} = JSON.parse(sessionStorage.getItem("LOGIN_MEMBER"));
     // 서버에 회원정보 요청
     return await axios.get(
-      `http://15.164.119.184:8080/members/${num}`,
+      `http://3.35.147.170:8080/members/${num}`,
       {
         withCredentials: true
       }
@@ -207,7 +207,7 @@ const MemberUpdateForm = () => {
     const key = "LOGIN_MEMBER";
     const {num} = getSessionStorageData(key);
     return await axios.put(
-      `http://15.164.119.184:8080/members/${num}`,
+      `http://3.35.147.170:8080/members/${num}`,
       formData,
       {
         headers: {

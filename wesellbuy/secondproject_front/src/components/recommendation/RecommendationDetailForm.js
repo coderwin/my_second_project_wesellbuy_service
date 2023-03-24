@@ -114,14 +114,14 @@ const RecommendationDetailForm = () => {
   }
   // 이미지 src 만들기
   function createSrc(storedFileName) {
-    return `http://15.164.119.184:8080/recommendations/images/${storedFileName}`;
+    return `http://3.35.147.170:8080/recommendations/images/${storedFileName}`;
   }
   // 추천합니다글 상세보기 데이터 불러오기
   async function getRecommendationDetailInfo() {
     // 서버에 item detail 요청하기
     // 그래도 CORS 정책을 따라야 할 듯
     return await axios.get(
-      `http://15.164.119.184:8080/recommendations/${boardNum}`
+      `http://3.35.147.170:8080/recommendations/${boardNum}`
     );
   }
 

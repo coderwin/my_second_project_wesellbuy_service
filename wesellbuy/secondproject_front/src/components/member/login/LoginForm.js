@@ -107,7 +107,7 @@ export const LoginForm = () => {
     // 로그인 서버로 요청
     try {
       const result = await axios.post(
-        "http://15.164.119.184:8080/members/login",
+        "http://3.35.147.170:8080/members/login",
         data,
         {
           withCredentials: true

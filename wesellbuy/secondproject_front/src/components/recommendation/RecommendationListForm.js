@@ -89,7 +89,7 @@ const RecommendationListForm = () => {
     // data는 params
   async function getRecommendationList() {
     return await axios.get(
-      "http://15.164.119.184:8080/recommendations",
+      "http://3.35.147.170:8080/recommendations",
       {
         params: data
       }

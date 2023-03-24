@@ -26,7 +26,7 @@ const ReplyBoxForm = ({replyFormList}) => {
   // 서버로 댓글 수정 데이터 보내기
   async function updateReply(boardNum, replyNum, content) {
     return await axios.put(
-      `http://15.164.119.184:8080/items/${boardNum}/replies/${replyNum}`,
+      `http://3.35.147.170:8080/items/${boardNum}/replies/${replyNum}`,
       {
         content: content
       },
@@ -38,7 +38,7 @@ const ReplyBoxForm = ({replyFormList}) => {
   // 서버로 댓글 삭제 요청 보내기
   async function deleteReply(boardNum, replyNum) {
     return await axios.delete(
-      `http://15.164.119.184:8080/items/${boardNum}/replies/${replyNum}`,
+      `http://3.35.147.170:8080/items/${boardNum}/replies/${replyNum}`,
       {
         withCredentials: true
       }
@@ -48,7 +48,7 @@ const ReplyBoxForm = ({replyFormList}) => {
   // 서버에 댓글 등록 요청하기
   async function saveReply(boardNum, data) {
     return await axios.post(
-      `http://15.164.119.184:8080/items/${boardNum}/replies`,
+      `http://3.35.147.170:8080/items/${boardNum}/replies`,
       data,
       {
         withCredentials: true
