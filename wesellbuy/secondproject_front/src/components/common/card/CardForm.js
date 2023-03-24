@@ -44,7 +44,7 @@ const CardForm = ({data, likesList, memberInfo, addItemLikesList, countOutInItem
     } else {
       setSrc(NoImage);
     }
-  }, [pictureForm]);
+  }, []);
   // // 상품 설명은 30 글자로만
   // function inputContent() {
   //   // 상품의 설명은 30 글자만 한다.
