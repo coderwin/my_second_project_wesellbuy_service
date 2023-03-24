@@ -95,6 +95,9 @@ const HeaderTop = () => {
                 <Nav.Item>
                     <Nav.Link onClick={handleJoinClick}>회원가입</Nav.Link>
                 </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link onClick={handleOrderClick}>장바구니</Nav.Link>
+                </Nav.Item>
             </Nav>
         );  
     // 로그인

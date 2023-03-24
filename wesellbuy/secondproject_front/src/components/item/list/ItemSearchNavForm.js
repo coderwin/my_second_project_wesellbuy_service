@@ -26,7 +26,7 @@ const ItemSearchNavForm = () => {
     formatYear: 'yy'
   }
   // 페이지 sizeValues 배열 변수
-  const sizeValues = [5, 10, 15, 20];
+  const sizeValues = [10, 15, 20, 30];
   /// 상태 모음
 
   /// 메서드 모음

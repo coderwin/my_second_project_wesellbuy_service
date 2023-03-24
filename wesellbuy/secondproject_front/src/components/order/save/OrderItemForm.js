@@ -64,26 +64,26 @@ const OrderItemForm = ({data, num, datasLength, handleDeleteBtnClick, handleSele
       {data && (
         <ListGroupItem>
           <Row> 
-            <Col sm="1">
+            <Col>
               <input
                 type="checkbox"
                 name="selection"
                 onClick={handleInitSelectionChangeV2}
               />
             </Col>
-            <Col sm="1">{datasLength - num}</Col>
-            <Col sm="2">{itemData.name}</Col>
-            <Col sm="2">
+            <Col>{datasLength - num}</Col>
+            <Col>{itemData.name}</Col>
+            <Col>
               {itemData.quantity}
             </Col>
-            <Col sm="2">
+            <Col>
               {itemData.price}
             </Col>
-            <Col sm="2">
+            <Col>
               {totalPrice}
             </Col>
             
-            <Col sm="2">
+            <Col>
               <Button id={itemData.id} onClick={handleDeleteBtnClick}>삭제</Button>
             </Col>
           </Row>

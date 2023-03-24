@@ -30,7 +30,7 @@ const OrderItemList = ({orderItem, num}) => {
   return (
     <>
       <tr>
-        <th>{num}</th>
+        <th>{num + 1}</th>
         <th 
           id={orderItem.itemNum} 
           className="mousePointer"

@@ -28,7 +28,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     properties:
       hibernate:
 #        show_sql: true # System.out sql 실힝
@@ -103,5 +103,5 @@ file:
 #폴더 생성 경로
 directory:
   selfPicture.dir: /home/ec2-user/my_project_2/upload/images/member # 회원 이미지
-  recommendationPicture.dir: /home/ec2-user/my_project_2/upload/images/recommendation" # 추천합니다글 이미지
+  recommendationPicture.dir: /home/ec2-user/my_project_2/upload/images/recommendation # 추천합니다글 이미지
   itemPicture.dir: /home/ec2-user/my_project_2/upload/images/item # 상품 이미지

@@ -133,7 +133,7 @@ const OrderListForSellerForm = () => {
     <OrderListForSellerContext.Provider value={{data, handleDataChange, handleSearchClick, listDatas, totalPages}}>
       <Container className="body_text_center">
         <Row className="d-flex justify-content-center">
-          <Col sm={10}>
+          <Col sm={11}>
             {/* 주문받은 상품 찾기 Nav */}
             <Row>
               <Col md="12">

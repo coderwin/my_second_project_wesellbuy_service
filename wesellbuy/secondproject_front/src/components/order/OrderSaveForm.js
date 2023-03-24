@@ -53,7 +53,7 @@ const OrderSaveForm = () => {
     // memberInfo에 담기
     setMemberInfo(memberData);
   }
-  // 주문하기 클릭했을 때
+  // 결제하기 클릭했을 때
   async function handlePayClick() {
     const paidMoney = window.prompt("지불금액을 입력하세요", "숫자만 가능합니다.");
     // 숫자인지 아닌지 조사하기
@@ -112,6 +112,8 @@ const OrderSaveForm = () => {
             return;
           }
         }
+      } else {
+        alert("로그인이 필요합니다");
       }
     }
   }
@@ -264,13 +266,13 @@ const OrderSaveForm = () => {
             {/* order header -> 제목 */}
             <ListGroupItem>
               <Row>
-                <Col sm="1">선택</Col>
-                <Col sm="2">주문번호</Col>
-                <Col sm="2">상품명</Col>
-                <Col sm="2">주문수량</Col>
-                <Col sm="2">상품가격</Col>
-                <Col sm="2">총가격</Col>
-                <Col sm="2"></Col>{/* 삭제 버튼  */}
+                <Col>선택</Col>
+                <Col>주문번호</Col>
+                <Col>상품명</Col>
+                <Col>주문수량</Col>
+                <Col>상품가격</Col>
+                <Col>총가격</Col>
+                <Col></Col>{/* 삭제 버튼  */}
               </Row>
             </ListGroupItem>
             {/* order body -> 주문 상품들 뿌려주기 */}

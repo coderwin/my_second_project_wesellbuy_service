@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import ReplyCustomerServiceWritingForm from './ReplyCustomerServiceWritingForm';
 import ReplyListForm from '../../common/reply/ReplyListForm';
+import { ListGroup, ListGroupItem } from 'react-bootstrap';
 
 /**
  * recommendation reply component
@@ -72,6 +73,12 @@ const ReplyCustomerServiceBoxForm = ({replyFormList}) => {
 
   return (
     <>
+      {/* 댓글 시작 */}
+      <ListGroup>
+        <ListGroupItem className="border border-white">
+          <h3>댓글 쓰기</h3>
+        </ListGroupItem>
+      </ListGroup>
       <ReplyListForm 
         replyFormList={replyFormList} 
         replies={replies} 

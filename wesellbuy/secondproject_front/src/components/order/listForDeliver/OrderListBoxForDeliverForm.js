@@ -53,7 +53,7 @@ const OrderListBoxForDeliverForm = () => {
 
   return (
     <Table hover>
-      <thead class="table-primary">
+      <thead className="table-primary">
         <tr>
           <th>주문순서</th>
           <th>ID</th>

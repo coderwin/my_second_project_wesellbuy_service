@@ -140,7 +140,7 @@ const CustomerServiceListForm = () => {
             </Row>
             {/* 고객지원글 목록 box */}
             <Row id="top">
-              <Col md="10">
+              <Col md="12">
                 {/* body - 고객지원글 목록  */}
                 <CustomerServiceListBoxForm />
               </Col>
