@@ -89,7 +89,7 @@ spring:
   datasource:
   # mysql
     # 배포 url
-    url: jdbc:mysql://15.164.119.184:3306/wesellbuy?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://3.35.147.170:3306/wesellbuy?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true
     username:
     password:
     driver-class-name: com.mysql.cj.jdbc.Driver

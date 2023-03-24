@@ -40,7 +40,7 @@ public class WebConfig implements WebMvcConfigurer {
                 .order(1)
                 .addPathPatterns("/**")
                 .excludePathPatterns(
-                        "/*/images/{savedFileName}", "/error", "/*.ico",
+                        "/*/images/{savedFileName}", "/error",
                         "/members","/members/login", "/members/logout", "/members/find/**", "/members/id/**",
                         "/items", "/items/{num}", "/items/rank/v1",
                         "/orders",
