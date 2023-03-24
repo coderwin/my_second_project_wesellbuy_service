@@ -27,6 +27,7 @@ const CustomerServiceSaveForm = () => {
   }
   // navigation
   const navigation = useNavigate();
+  const {serverHost} = useContext(CustomContext);
 
   /// 상태 모음
   const [loding, setLoding] = useState(false);// 요청 처리 상태
@@ -114,7 +115,7 @@ const CustomerServiceSaveForm = () => {
   async function save() {
 
     return await axios.post(
-      "http://3.35.147.170:8080/customerservices",
+      `http://${serverHost}:8080/customerservices`,
       data,
       {
         withCredentials: true

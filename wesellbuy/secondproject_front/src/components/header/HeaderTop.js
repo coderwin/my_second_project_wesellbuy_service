@@ -10,6 +10,7 @@ const HeaderTop = () => {
     // 외부 변수, 상태, 메서드 불러오기
     const {sessionForm, changeLoding} = useContext(CustomContext);
     const navigation = useNavigate();
+    const {serverHost} = useContext(CustomContext);
 
     // 상태 모음
     // 로딩/작업진행중 상태
@@ -39,7 +40,7 @@ const HeaderTop = () => {
         changeLoding(true);
         // 서버 로그아웃 하기
         const {data} = await axios.post(
-            "http://3.35.147.170:8080/members/logout"
+            `http://${serverHost}:8080/members/logout`
         );
         return data;
     }

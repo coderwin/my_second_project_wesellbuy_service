@@ -1,6 +1,7 @@
 import axios from 'axios';
-import React, { createContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
+import { CustomContext } from '../../../App';
 import EmailForPwdForm from './EmailForPwdForm';
 import PwdSearchAnswerForm from './PwdSearchAnswerForm';
 import SelfphoneForPwdForm from './SelfphoneForPwdForm';
@@ -16,6 +17,7 @@ const PwdSearchForm = () => {
         selfPhone: "",
         email: ""
     }
+    const {serverHost} = useContext(CustomContext);
 
     /// 상태 모음
     const [loding, setLoding] = useState(false); // 로딩 상태
@@ -54,7 +56,7 @@ const PwdSearchForm = () => {
         setLoding(true);
         // json으로 바꾸기
         return await axios.get(
-            "http://3.35.147.170:8080/members/find/pwd",
+            `http://${serverHost}:8080/members/find/pwd`,
             {params: data}
         );
     }

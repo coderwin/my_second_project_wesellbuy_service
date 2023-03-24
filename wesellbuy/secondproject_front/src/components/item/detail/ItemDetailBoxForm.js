@@ -5,6 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import ImagesBox from '../../common/image/ImagesBox';
 import { ItemDetailContext } from '../ItemDetailForm';
 import '../../../css/form.css';
+import { CustomContext } from '../../../App';
 
 /**
  * Item detail 내용 component
@@ -21,6 +22,7 @@ const ItemDetailBoxForm = () => {
   const {num: boardNum} = useParams();// 상품번호 불러오기
   const navigation = useNavigate();// navigation
   const favoriteHeart = likesList.includes(Number(boardNum));
+  const {serverHost} = useContext(CustomContext);
 
   /// 상태 모음
   const [likesState, setLikesState] = useState(false);// 좋아요 선택 상태
@@ -32,7 +34,7 @@ const ItemDetailBoxForm = () => {
   // 서버에서 좋아요 리스트 불러오기
   async function getLikesList() {
     return await axios.get(
-      `http://3.35.147.170:8080/items/likes`,
+      `http://${serverHost}:8080/items/likes`,
       {
         withCredentials: true
       }
@@ -43,7 +45,7 @@ const ItemDetailBoxForm = () => {
   async function deleteLikes(boardNum, likesNum) {
     // 서버에 좋아요 삭제 요청하기
     return await axios.delete(
-      `http://3.35.147.170:8080/items/${boardNum}/likes`,
+      `http://${serverHost}:8080/items/${boardNum}/likes`,
       {
         withCredentials: true
       }
@@ -53,7 +55,7 @@ const ItemDetailBoxForm = () => {
   async function saveLikes(boardNum) {
     // 서버에 좋아요 등록 요청하기
     return await axios.post(
-      `http://3.35.147.170:8080/items/${boardNum}/likes`,
+      `http://${serverHost}:8080/items/${boardNum}/likes`,
       {},
       {
         withCredentials: true
@@ -124,7 +126,7 @@ const ItemDetailBoxForm = () => {
   async function deleteItem() {
     
     return await axios.delete(
-      `http://3.35.147.170:8080/items/${boardNum}`,
+      `http://${serverHost}:8080/items/${boardNum}`,
       {
         withCredentials: true
       }

@@ -1,11 +1,12 @@
 import axios from 'axios';
-import React, { createContext, useEffect, useState } from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap';
 import PageButtonForm from '../common/pagebutton/PageButtonForm';
 import OrderSearchNavForm from './list/OrderSearchNavForm';
 import OrderListBoxForm from './list/OrderListBoxForm';
 import Loding from '../Loding';
 import '../../css/form.css';
+import { CustomContext } from '../../App';
 
 /**
  * Order list component
@@ -28,6 +29,7 @@ const OrderListForm = () => {
     size: 10,// 페이지 size
     page: 0// 페이지 번호
   }
+  const {serverHost} = useContext(CustomContext);
   
 
   /// 상태 모음
@@ -83,7 +85,7 @@ const OrderListForm = () => {
   // 서버에서 나의 주문 불러오기
   async function getOrderList() {
     return await axios.get(
-      "http://3.35.147.170:8080/orders",
+      `http://${serverHost}:8080/orders`,
       {
         params: data,
         withCredentials: true

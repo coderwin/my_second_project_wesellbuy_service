@@ -17,6 +17,8 @@ export const LoginForm = () => {
   const defaultError = {
     errMsg: ""
   }
+  const {serverHost} = useContext(CustomContext);
+
   // 상태 생성
   const [data, setData] = useState(defaultData); // 로그인 정보
   const [loding, setLoding] = useState(false); // 데이터 처리 중
@@ -107,7 +109,7 @@ export const LoginForm = () => {
     // 로그인 서버로 요청
     try {
       const result = await axios.post(
-        "http://3.35.147.170:8080/members/login",
+        `http://${serverHost}:8080/members/login`,
         data,
         {
           withCredentials: true

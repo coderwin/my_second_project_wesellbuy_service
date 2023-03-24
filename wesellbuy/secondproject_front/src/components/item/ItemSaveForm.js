@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { createContext, useRef, useState } from 'react'
+import React, { createContext, useContext, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import ItemDefaultForm from './save/ItemDefaultForm';
 import BookForm from './save/BookForm';
@@ -7,6 +7,7 @@ import FurnitureForm from './save/FurnitureForm';
 import HomeApplianceForm from './save/HomeApplianceForm';
 import { Button, Col, Form, Row, Image } from 'react-bootstrap';
 import Loding from '../Loding';
+import { CustomContext } from '../../App';
 
 /**
  * Item save component
@@ -49,6 +50,7 @@ const ItemSaveForm = () => {
   // type에 들어가는 상품종류 모음
   const typeValues = ["", "B", "F", "HA", "ITEM"];
   const typeNames = ["선택", "책", "가구", "가전제품", "기타"];
+  const {serverHost} = useContext(CustomContext);
 
   /// 상태 모음
   const [loding, setLoding] = useState(false);// 요청 처리 상태
@@ -145,7 +147,7 @@ const ItemSaveForm = () => {
   async function save(formData) {
 
     return await axios.post(
-      "http://3.35.147.170:8080/items",
+      `http://${serverHost}:8080/items`,
       formData,
       {
         headers: {

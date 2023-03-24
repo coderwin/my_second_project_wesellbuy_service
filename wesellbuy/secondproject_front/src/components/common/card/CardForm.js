@@ -1,7 +1,8 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Button, Card, Col, Row } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { CustomContext } from '../../../App';
 import NoImage from '../../../images/common/card_no_image.jpg';
 
 /**
@@ -24,6 +25,7 @@ const CardForm = ({data, likesList, memberInfo, addItemLikesList, countOutInItem
   const {num: boardNum, name, price, memberId, pictureForm} = data;
   const navigation = useNavigate();// navigation
   const favoriteHeart = likesList.includes(boardNum);// 하트이미지 표시 결정 변수
+  const {serverHost} = useContext(CustomContext);
 
   /// 상태 모음
   const [likesState, setLikesState] = useState(false);// 좋아요 상태
@@ -121,7 +123,7 @@ const CardForm = ({data, likesList, memberInfo, addItemLikesList, countOutInItem
   async function deleteLikes(boardNum) {
     // 서버에 좋아요 삭제 요청하기
     return await axios.delete(
-      `http://3.35.147.170:8080/items/${boardNum}/likes`,
+      `http://${serverHost}:8080/items/${boardNum}/likes`,
       {
         withCredentials: true
       }
@@ -131,7 +133,7 @@ const CardForm = ({data, likesList, memberInfo, addItemLikesList, countOutInItem
   async function saveLikes(boardNum) {
     // 서버에 좋아요 등록 요청하기
     return await axios.post(
-      `http://3.35.147.170:8080/items/${boardNum}/likes`,
+      `http://${serverHost}:8080/items/${boardNum}/likes`,
       {},
       {
         withCredentials: true
@@ -140,7 +142,7 @@ const CardForm = ({data, likesList, memberInfo, addItemLikesList, countOutInItem
   }
   // 이미지 src 만들기
   function createSrc(storedFileName) {
-    return `http://3.35.147.170:8080/items/images/${storedFileName}`;  
+    return `http://${serverHost}:8080/items/images/${storedFileName}`;  
   }
   // 상세보기 클릭했을 때
   // 상품 상세보기로 간다

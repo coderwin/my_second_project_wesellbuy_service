@@ -1,8 +1,9 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import ReplyCustomerServiceWritingForm from './ReplyCustomerServiceWritingForm';
 import ReplyListForm from '../../common/reply/ReplyListForm';
 import { ListGroup, ListGroupItem } from 'react-bootstrap';
+import { CustomContext } from '../../../App';
 
 /**
  * recommendation reply component
@@ -17,6 +18,9 @@ import { ListGroup, ListGroupItem } from 'react-bootstrap';
  */
 const ReplyCustomerServiceBoxForm = ({replyFormList}) => {
 
+  /// 변수 모음
+  const {serverHost} = useContext(CustomContext);
+
   /// 상태 모음
   /// 상태 모음
   const [replies, setReplies] = useState(replyFormList);// 댓글 모음 상태
@@ -26,7 +30,7 @@ const ReplyCustomerServiceBoxForm = ({replyFormList}) => {
   // 서버로 댓글 수정 데이터 보내기
   async function updateReply(boardNum, replyNum, content) {
     return await axios.put(
-      `http://3.35.147.170:8080/customerservices/${boardNum}/replies/${replyNum}`,
+      `http://${serverHost}:8080/customerservices/${boardNum}/replies/${replyNum}`,
       {
         content: content
       },
@@ -38,7 +42,7 @@ const ReplyCustomerServiceBoxForm = ({replyFormList}) => {
   // 서버로 댓글 삭제 요청 보내기
   async function deleteReply(boardNum, replyNum) {
     return await axios.delete(
-      `http://3.35.147.170:8080/customerservices/${boardNum}/replies/${replyNum}`,
+      `http://${serverHost}:8080/customerservices/${boardNum}/replies/${replyNum}`,
       {
         withCredentials: true
       }
@@ -48,7 +52,7 @@ const ReplyCustomerServiceBoxForm = ({replyFormList}) => {
   // 서버에 댓글 등록 요청하기
   async function saveReply(boardNum, data) {
     return await axios.post(
-      `http://3.35.147.170:8080/customerservices/${boardNum}/replies`,
+      `http://${serverHost}:8080/customerservices/${boardNum}/replies`,
       data,
       {
         withCredentials: true

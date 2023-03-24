@@ -1,11 +1,12 @@
 import axios from 'axios';
-import React, { createContext, useEffect, useState } from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 import Loding from '../Loding';
 import CustomerServiceDetailBoxForm from './detail/CustomerServiceDetailBoxForm';
 import ReplyCustomerServiceBoxForm from './reply/ReplyCustomerServiceBoxForm';
 import '../../css/form.css';
+import { CustomContext } from '../../App';
 
 /**
  * CustomerService detail component
@@ -33,6 +34,7 @@ const CustomerServiceDetailForm = () => {
     // num을 itemNum으로 교체
   const {num: boardNum} = useParams();
   const navigation = useNavigate();// navigation
+  const {serverHost} = useContext(CustomContext);
 
   /// 상태 모음
   const [loding, setLoding] = useState(false);// 요청 상태
@@ -106,7 +108,7 @@ const CustomerServiceDetailForm = () => {
     // 누구든 볼수 없음 - 인증 필요
     // CORS 정책을 따라야 할 듯
     return await axios.get(
-      `http://3.35.147.170:8080/customerservices/${boardNum}`,
+      `http://${serverHost}:8080/customerservices/${boardNum}`,
       {
         withCredentials: true
       }

@@ -45,6 +45,9 @@ export const CustomContext = createContext(null);
 
 function App() {
 
+  /// 변수 모음
+  const serverHost = "43.200.133.164";// 서버의 host
+
   /// 상태 모음
   // 로그인/비로그인 확인을 위한 상태
   const [sessionForm, setSessionForm] = useState(null); // 로그인한 사용자 데이터 담는 상태
@@ -82,7 +85,7 @@ function App() {
 
   return (
     <>
-      <CustomContext.Provider value={{sessionForm, handleSessionFormDataInput, handleSessionFormChangeData, getCurrentDate, setLoding, changeLoding}}>
+      <CustomContext.Provider value={{sessionForm, handleSessionFormDataInput, handleSessionFormChangeData, getCurrentDate, setLoding, changeLoding, serverHost}}>
         <Header />
 
         <Routes>

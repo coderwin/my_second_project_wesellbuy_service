@@ -23,6 +23,7 @@ const OrderSaveForm = () => {
   const navigation = useNavigate();
   // 외부 변수, 상태, 메서드 불러오기
   const {setLoding: setAllLoding} = useContext(CustomContext);
+  const {serverHost} = useContext(CustomContext);
 
   /// 상태 모음
   const [loding, setLoding] = useState(false);// 요청처리 상태
@@ -134,7 +135,7 @@ const OrderSaveForm = () => {
   // 서버로 주문등록하기
   async function save(paidMoney) {
     return await axios.post(
-      "http://3.35.147.170:8080/orders",
+      `http://${serverHost}:8080/orders`,
       {
         data: readyOrder,
         paidMoney: paidMoney

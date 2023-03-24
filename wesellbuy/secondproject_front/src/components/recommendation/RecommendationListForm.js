@@ -28,6 +28,7 @@ const RecommendationListForm = () => {
     size: 5,// 페이지 size
     page: 0// 페이지 번호
   }
+  const {serverHost} = useContext(CustomContext);
 
   /// 상태 모음
   const [loding, setLoding] = useState(false);// 요청처리 상태
@@ -89,7 +90,7 @@ const RecommendationListForm = () => {
     // data는 params
   async function getRecommendationList() {
     return await axios.get(
-      "http://3.35.147.170:8080/recommendations",
+      `http://${serverHost}:8080/recommendations`,
       {
         params: data
       }

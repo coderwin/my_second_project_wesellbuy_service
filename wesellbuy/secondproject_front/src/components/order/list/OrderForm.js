@@ -1,7 +1,8 @@
 import axios from 'axios';
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { CustomContext } from '../../../App';
 import Loding from '../../Loding';
 
 /**
@@ -30,6 +31,7 @@ const OrderForm = ({data, numPosition, datasLength, totalPages, searchCond}) => 
   const orderStatusNames = ["주문", "취소"];// 주문상태 names 모음
   const deliveryStatusValues = ["READY", "TRANSIT", "COMPLETE", "OVER"];// 배달상태 values 모음
   const deliveryStatusNames = ["준비중", "배송중", "배송완료", "배송취소"];// 배달상태 names 모음
+  const {serverHost} = useContext(CustomContext);
 
   /// 상태 모음
   const [loding, setLoding] = useState(false);// 요청처리 상태
@@ -73,7 +75,7 @@ const OrderForm = ({data, numPosition, datasLength, totalPages, searchCond}) => 
   // 서버로 취소 요청
   async function cancel(num) {
     return await axios.delete(
-      `http://3.35.147.170:8080/orders/${num}`,
+      `http://${serverHost}:8080/orders/${num}`,
       {
         withCredentials: true
       }

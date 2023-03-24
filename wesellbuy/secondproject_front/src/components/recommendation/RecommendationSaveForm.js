@@ -1,7 +1,8 @@
 import axios from 'axios';
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Button, Col, Row, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { CustomContext } from '../../App';
 import Loding from '../Loding';
 
 /**
@@ -29,6 +30,7 @@ const RecommendationSaveForm = () => {
   }
   // navigation
   const navigation = useNavigate();
+  const {serverHost} = useContext(CustomContext);
 
   /// 상태 모음
   const [loding, setLoding] = useState(false);// 요청 처리 상태
@@ -122,7 +124,7 @@ const RecommendationSaveForm = () => {
   async function save(formData) {
 
     return await axios.post(
-      "http://3.35.147.170:8080/recommendations",
+      `http://${serverHost}:8080/recommendations`,
       formData,
       {
         headers: {

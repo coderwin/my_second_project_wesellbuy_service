@@ -4,6 +4,7 @@ import { Table } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { ItemRankContext } from '../ItemRankForm';
 import "../../../css/form.css";
+import { CustomContext } from '../../../App';
 
 /**
  * Item rank list box component
@@ -18,6 +19,7 @@ const ItemRankBoxForm = () => {
   /// 변수 모음
   // 외부의 변수 불러오기
   const navigation = useNavigate();// navigation
+  const {serverHost} = useContext(CustomContext);
 
   /// 상태 모음
   const [datas, setDatas] = useState(null);// 상품순위 목록 데이터 상태 
@@ -42,7 +44,7 @@ const ItemRankBoxForm = () => {
   // 서버에서 상품 랭크(순위) 불러오기
   async function getItemRankList() {
     return await axios.get(
-      "http://3.35.147.170:8080/items/rank/v1"
+      `http://${serverHost}:8080/items/rank/v1`
     );
   }
   // 상품명을 클릭했을 때

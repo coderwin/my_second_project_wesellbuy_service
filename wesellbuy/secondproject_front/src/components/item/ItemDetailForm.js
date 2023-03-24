@@ -1,11 +1,12 @@
 import axios from 'axios';
-import React, { createContext, useEffect, useState } from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 import ItemDetailBoxForm from './detail/ItemDetailBoxForm';
 import ItemOrderBoxForm from './detail/ItemOrderBoxForm';
 import ReplyBoxForm from '../common/reply/ReplyBoxForm';
 import Loding from '../Loding';
+import { CustomContext } from '../../App';
 
 /**
  * Item detail component
@@ -40,6 +41,7 @@ const ItemDetailForm = () => {
     // num을 itemNum으로 교체
   const {num: itemNum} = useParams();
   const navigation = useNavigate();// navigation
+  const {serverHost} = useContext(CustomContext);
 
   /// 상태 모음
   const [loding, setLoding] = useState(false);// 요청 상태
@@ -124,14 +126,14 @@ const ItemDetailForm = () => {
   }
   // 이미지 src 만들기
   function createSrc(storedFileName) {
-    return `http://3.35.147.170:8080/items/images/${storedFileName}`;
+    return `http://${serverHost}:8080/items/images/${storedFileName}`;
   }
   // 상품 상세보기 데이터 불러오기
   async function getItemDetailInfo() {
     // 서버에 item detail 요청하기
     // 누구든 볼수 있음 - 인증 불필요
     return await axios.get(
-      `http://3.35.147.170:8080/items/${itemNum}`
+      `http://${serverHost}:8080/items/${itemNum}`
     );
   }
 

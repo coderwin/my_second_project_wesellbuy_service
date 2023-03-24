@@ -1,7 +1,8 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Col, Form, ListGroup, ListGroupItem, Row } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { CustomContext } from '../../../App';
 import '../../../css/form.css';
 import Loding from '../../Loding';
 
@@ -30,6 +31,7 @@ const JoinForm = () => {
     detail: "",
     zipcode: ""
   }
+  const {serverHost} = useContext(CustomContext);
   // data
   const [data, setData] = useState(defaultData);
   // file
@@ -120,7 +122,7 @@ const JoinForm = () => {
     // 데이터 서버로 보내기
     await axios({
         method: 'post',
-        url: 'http://3.35.147.170:8080/members',
+        url: `http://${serverHost}:8080/members`,
         data: formData,
         headers: {
           "Content-Type": "multipart/form-data"
@@ -178,7 +180,7 @@ const JoinForm = () => {
     const {id} = data;
     // 서버에 아이디 중복확인 요청
     axios.get(
-      "http://3.35.147.170:8080/members/id/check", 
+      `http://${serverHost}:8080/members/id/check`, 
       {
         params: {
           id

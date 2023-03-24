@@ -5,6 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import ImagesBox from '../../common/image/ImagesBox';
 import { RecommendationDetailContext } from '../RecommendationDetailForm';
 import '../../../css/form.css';
+import { CustomContext } from '../../../App';
 
 /**
  * Recommendation detail 내용 component
@@ -20,6 +21,7 @@ const RecommendationDetailBoxForm = () => {
   const {data, setLoding, memberInfo, srcArr} = useContext(RecommendationDetailContext);// 외부의 변수, 상태, 메서드 불러오기
   const {num: boardNum} = useParams();// 추천합니다글번호 불러오기
   const navigation = useNavigate();// navigation
+  const {serverHost} = useContext(CustomContext);
 
   /// 상태 모음
 
@@ -34,7 +36,7 @@ const RecommendationDetailBoxForm = () => {
   async function deleteRecommendation() {
     
     return await axios.delete(
-      `http://3.35.147.170:8080/recommendations/${boardNum}`,
+      `http://${serverHost}:8080/recommendations/${boardNum}`,
       {
         withCredentials: true
       }

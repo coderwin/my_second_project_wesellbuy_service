@@ -1,11 +1,12 @@
 import axios from 'axios';
-import React, { createContext, useEffect, useState } from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap';
 import PageButtonForm from '../common/pagebutton/PageButtonForm';
 import Loding from '../Loding';
 import OrderListBoxForDeliverForm from './listForDeliver/OrderListBoxForDeliverForm';
 import OrderSearchNavForDeliverForm from './listForDeliver/OrderSearchNavForDeliverForm';
 import '../../css/form.css';
+import { CustomContext } from '../../App';
 
 /**
  * Order list for deliver component
@@ -28,6 +29,7 @@ const OrderListForDeliverForm = () => {
     size: 10,// 페이지 size
     page: 0// 페이지 번호
   }
+  const {serverHost} = useContext(CustomContext);
 
   /// 상태 모음
   const [loding, setLoding] = useState(false);// 요청처리 상태
@@ -81,7 +83,7 @@ const OrderListForDeliverForm = () => {
   // 서버에서 나의 주문 불러오기
   async function getOrderList() {
     return await axios.get(
-      "http://3.35.147.170:8080/orders/deliver",
+      `http://${serverHost}:8080/orders/deliver`,
       {
         params: data,
         withCredentials: true

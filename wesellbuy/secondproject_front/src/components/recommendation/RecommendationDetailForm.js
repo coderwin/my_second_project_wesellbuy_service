@@ -1,11 +1,12 @@
 import axios from 'axios';
-import React, { createContext, useEffect, useState } from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 import Loding from '../Loding';
 import RecommendationDetailBoxForm from './detail/RecommendationDetailBoxForm';
 import ReplyRecommendationBoxForm from './reply/ReplyRecommendationBoxForm'
 import '../../css/form.css'
+import { CustomContext } from '../../App';
 
 /**
  * Recommendation detail component
@@ -34,6 +35,7 @@ const RecommendationDetailForm = () => {
     // num을 itemNum으로 교체
   const {num: boardNum} = useParams();
   const navigation = useNavigate();// navigation
+  const {serverHost} = useContext(CustomContext);
 
   /// 상태 모음
   const [loding, setLoding] = useState(false);// 요청 상태
@@ -114,14 +116,14 @@ const RecommendationDetailForm = () => {
   }
   // 이미지 src 만들기
   function createSrc(storedFileName) {
-    return `http://3.35.147.170:8080/recommendations/images/${storedFileName}`;
+    return `http://${serverHost}:8080/recommendations/images/${storedFileName}`;
   }
   // 추천합니다글 상세보기 데이터 불러오기
   async function getRecommendationDetailInfo() {
     // 서버에 item detail 요청하기
     // 그래도 CORS 정책을 따라야 할 듯
     return await axios.get(
-      `http://3.35.147.170:8080/recommendations/${boardNum}`
+      `http://${serverHost}:8080/recommendations/${boardNum}`
     );
   }
 

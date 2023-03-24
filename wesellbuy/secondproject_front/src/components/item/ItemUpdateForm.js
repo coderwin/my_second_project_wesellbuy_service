@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { createContext, useEffect, useRef, useState } from 'react'
+import React, { createContext, useContext, useEffect, useRef, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import BookUpdateForm from './update/BookUpdateForm';
 import FurnitureUpdateForm from './update/FurnitureUpdateForm';
@@ -7,6 +7,7 @@ import HomeApplianceUpdateForm from './update/HomeApplianceUpdateForm';
 import { Button, Col, Form, Row} from 'react-bootstrap';
 import ImagesBoxSpread from '../common/image/ImagesBoxSpread';
 import Loding from '../Loding';
+import { CustomContext } from '../../App';
 
 /**
  * Item update component
@@ -54,6 +55,7 @@ const ItemUpdateForm = () => {
   // type에 들어가는 상품종류 모음
   const typeValues = ["", "B", "F", "HA", "ITEM"];
   const typeNames = ["선택", "책", "가구", "가전제품", "기타"];
+  const {serverHost} = useContext(CustomContext);
 
   /// 상태 모음
   const [loding, setLoding] = useState(false);// 요청 처리 상태
@@ -128,14 +130,14 @@ const ItemUpdateForm = () => {
   }
   // 이미지 src 만들기
   function createSrc(storedFileName) {
-    return `http://3.35.147.170:8080/items/images/${storedFileName}`;
+    return `http://${serverHost}:8080/items/images/${storedFileName}`;
   }
   // 상품 상세보기 데이터 불러오기
   async function getItemDetailInfo(boardNum) {
     // 서버에 item detail 요청하기
     // 누구든 볼수 있음 - 인증 불필요
     return await axios.get(
-      `http://3.35.147.170:8080/items/${boardNum}`
+      `http://${serverHost}:8080/items/${boardNum}`
     );
   }
   
@@ -218,7 +220,7 @@ const ItemUpdateForm = () => {
   async function update(formData, boardNum) {
 
     return await axios.put(
-      `http://3.35.147.170:8080/items/${boardNum}`,
+      `http://${serverHost}:8080/items/${boardNum}`,
       formData,
       {
         headers: {
@@ -328,7 +330,7 @@ const ItemUpdateForm = () => {
   async function deleteImage(boardNum, pictureNum) {
 
     return await axios.delete(
-      `http://3.35.147.170:8080/items/${boardNum}/pictures/${pictureNum}`,
+      `http://${serverHost}:8080/items/${boardNum}/pictures/${pictureNum}`,
       {
         withCredentials: true
       }

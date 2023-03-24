@@ -1,11 +1,12 @@
 import axios from 'axios';
-import React, { createContext, useEffect, useState } from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap';
 import PageButtonForm from '../common/pagebutton/PageButtonForm';
 import Loding from '../Loding';
 import CustomerServiceListBoxForm from './list/CustomerServiceListBoxForm';
 import CustomerServiceSearchNavForm from './list/CustomerServiceSearchNavForm';
 import '../../css/form.css';
+import { CustomContext } from '../../App';
 
 /**
  * CustomerService list component
@@ -26,6 +27,7 @@ const CustomerServiceListForm = () => {
     size: 10,// 페이지 size
     page: 0// 페이지 번호
   }
+  const {serverHost} = useContext(CustomContext);
 
   /// 상태 모음
   const [loding, setLoding] = useState(false);// 요청처리 상태
@@ -80,7 +82,7 @@ const CustomerServiceListForm = () => {
   // 서버에서 나의 고객지원글 불러오기
   async function getCustomerServiceList() {
     return await axios.get(
-      "http://3.35.147.170:8080/customerservices",
+      `http://${serverHost}:8080/customerservices`,
       {
         params: data,
         withCredentials: true

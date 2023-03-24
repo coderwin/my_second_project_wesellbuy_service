@@ -1,7 +1,8 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Button, Col, Form, Row, Image } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { CustomContext } from '../../App';
 import "../../css/form.css";
 import Loding from '../Loding';
 
@@ -41,6 +42,7 @@ const MemberUpdateForm = () => {
   }
   // navigation
   const navigation = useNavigate();
+  const {serverHost} = useContext(CustomContext);
   // country에 들어가는 국가 모음
   const countryValues = ["", "ko", "us", "gb", "cn", "jp"];
   const countryNames= ["국적", "대한민국", "미국", "영국", "중국", "일본"];
@@ -62,7 +64,7 @@ const MemberUpdateForm = () => {
     const {num} = JSON.parse(sessionStorage.getItem("LOGIN_MEMBER"));
     // 서버에 회원정보 요청
     return await axios.get(
-      `http://3.35.147.170:8080/members/${num}`,
+      `http://${serverHost}:8080/members/${num}`,
       {
         withCredentials: true
       }
@@ -207,7 +209,7 @@ const MemberUpdateForm = () => {
     const key = "LOGIN_MEMBER";
     const {num} = getSessionStorageData(key);
     return await axios.put(
-      `http://3.35.147.170:8080/members/${num}`,
+      `http://${serverHost}:8080/members/${num}`,
       formData,
       {
         headers: {

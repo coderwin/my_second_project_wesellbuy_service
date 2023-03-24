@@ -1,7 +1,8 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Button, Card, Col, Row } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { CustomContext } from '../../../App';
 
 /**
  * Card Form component
@@ -21,6 +22,8 @@ const CardForm = ({data})=> {
   // memberId(판매자도 칸을 만들지 생각해보기)
   const {num: boardNum, itemName, sellerId, hits} = data;
   const navigation = useNavigate();// navigation
+  const {serverHost} = useContext(CustomContext);
+
 
   /// 상태 모음
   const [content, setContent] = useState("");// 내용 상태
@@ -49,7 +52,7 @@ const CardForm = ({data})=> {
   }
   // 이미지 src 만들기 -> 현재 사용 안 함
   function createSrc(storedFileName) {
-    return `http://3.35.147.170:8080/recommendations/images/${storedFileName}`;
+    return `http://${serverHost}:8080/recommendations/images/${storedFileName}`;
   }
   // 상세보기 클릭했을 때
   // 추천합니다 상세보기로 간다
