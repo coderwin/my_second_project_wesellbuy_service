@@ -20,9 +20,9 @@
   bottom: 0;
   left: 0;
 }
-/* div에서 text(content) 원본 그대로 */
+/* div에서 text(content) 원본 그대로 + 띄어쓰기 */
 .originContent {
-  white-space: pre;
+  white-space: pre-wrap;
 }
 
 /* body */

@@ -286,6 +286,10 @@ const ItemSaveForm = () => {
                     }
                   </Form.Select>
                 </Col>
+                {/* 에러 메시지 */}
+                <Col className="error" sm="12">
+                  {errMsgs.type}
+                </Col>
               </Form.Group>
             </Col>
           </Row>
