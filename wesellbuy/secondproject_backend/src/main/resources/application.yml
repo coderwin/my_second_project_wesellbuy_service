@@ -91,9 +91,11 @@ spring:
     # 배포 url
     url: jdbc:mysql://43.200.133.164/wesellbuy?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true
     username:
-    password:# service
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
     
 # 파일 업로드 경로 설정
+# service
 file:
   selfPicture.dir: /home/ec2-user/my_project_2/upload/images/member/ # 회원 이미지
   recommendationPicture.dir: /home/ec2-user/my_project_2/upload/images/recommendation/ # 추천합니다글 이미지
@@ -103,7 +105,7 @@ directory:
   selfPicture.dir: /home/ec2-user/my_project_2/upload/images/member # 회원 이미지
   recommendationPicture.dir: /home/ec2-user/my_project_2/upload/images/recommendation # 추천합니다글 이미지
   itemPicture.dir: /home/ec2-user/my_project_2/upload/images/item # 상품 이미지
-    driver-class-name: com.mysql.cj.jdbc.Driver
+
 
 
 
