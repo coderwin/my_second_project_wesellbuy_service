@@ -70,9 +70,6 @@ server:
   servlet.session:
     timeout: 1800 # 세션 시간 설정(1800 = 30분)
     tracking-mode: cookie # 쿠키 URL 전달 방식 끄고/키기
-    cookie:
-      same-site: "none"
-      secure: true
 
   error:
     whitelabel.enabled: false # whitelabel 오류 페이지 사용 여부
