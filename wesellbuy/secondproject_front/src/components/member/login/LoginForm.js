@@ -109,7 +109,7 @@ export const LoginForm = () => {
     // 로그인 서버로 요청
     try {
       const result = await axios.post(
-        `https://${serverHost}:8080/members/login`,
+        `http://${serverHost}:8080/members/login`,
         data,
         {
           withCredentials: true

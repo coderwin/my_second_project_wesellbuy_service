@@ -34,7 +34,7 @@ const ItemListForm = () => {
     memberId: "",// 판매자 아이디
     dtype: "",// 종류
     createData: "",// 상품 생성 날짜(shape : 0000-00-00) 
-    size: 5,// 페이지 size
+    size: 10,// 페이지 size
     page: 0// 페이지 번호
   }
   // navigation

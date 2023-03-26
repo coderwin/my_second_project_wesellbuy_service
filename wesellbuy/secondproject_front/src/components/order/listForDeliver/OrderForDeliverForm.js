@@ -70,7 +70,7 @@ const OrderForDeliverForm = ({data, numPosition, datasLength, totalPages, search
   // 서버로 취소 요청
   async function changeDeliveryStatus(num) {
     return await axios.patch(
-      `https://${serverHost}:8080/orders/${num}/delivery/deliver`,
+      `http://${serverHost}:8080/orders/${num}/delivery/deliver`,
       {},
       {
         withCredentials: true

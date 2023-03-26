@@ -85,7 +85,7 @@ const OrderListForm = () => {
   // 서버에서 나의 주문 불러오기
   async function getOrderList() {
     return await axios.get(
-      `https://${serverHost}:8080/orders`,
+      `http://${serverHost}:8080/orders`,
       {
         params: data,
         withCredentials: true

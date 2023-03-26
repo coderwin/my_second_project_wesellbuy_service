@@ -25,7 +25,7 @@ const RecommendationListForm = () => {
     sellerId: "", // 추천받은 판매자 이름
     memberId: "", // 작성자 아이디
     createData: "",// 추천합니다글 생성 날짜(shape : 0000-00-00) 
-    size: 5,// 페이지 size
+    size: 10,// 페이지 size
     page: 0// 페이지 번호
   }
   const {serverHost} = useContext(CustomContext);
@@ -90,7 +90,7 @@ const RecommendationListForm = () => {
     // data는 params
   async function getRecommendationList() {
     return await axios.get(
-      `https://${serverHost}:8080/recommendations`,
+      `http://${serverHost}:8080/recommendations`,
       {
         params: data
       }

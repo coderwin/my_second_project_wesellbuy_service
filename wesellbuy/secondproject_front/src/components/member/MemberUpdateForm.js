@@ -64,7 +64,7 @@ const MemberUpdateForm = () => {
     const {num} = JSON.parse(sessionStorage.getItem("LOGIN_MEMBER"));
     // 서버에 회원정보 요청
     return await axios.get(
-      `https://${serverHost}:8080/members/${num}`,
+      `http://${serverHost}:8080/members/${num}`,
       {
         withCredentials: true
       }
@@ -209,7 +209,7 @@ const MemberUpdateForm = () => {
     const key = "LOGIN_MEMBER";
     const {num} = getSessionStorageData(key);
     return await axios.put(
-      `https://${serverHost}:8080/members/${num}`,
+      `http://${serverHost}:8080/members/${num}`,
       formData,
       {
         headers: {

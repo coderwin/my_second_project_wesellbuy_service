@@ -108,7 +108,7 @@ const CustomerServiceDetailForm = () => {
     // 누구든 볼수 없음 - 인증 필요
     // CORS 정책을 따라야 할 듯
     return await axios.get(
-      `https://${serverHost}:8080/customerservices/${boardNum}`,
+      `http://${serverHost}:8080/customerservices/${boardNum}`,
       {
         withCredentials: true
       }
