@@ -90,7 +90,7 @@ const RecommendationListForm = () => {
     // data는 params
   async function getRecommendationList() {
     return await axios.get(
-      `http://${serverHost}:8080/recommendations`,
+      `https://${serverHost}:8080/recommendations`,
       {
         params: data
       }

@@ -36,7 +36,7 @@ const RecommendationDetailBoxForm = () => {
   async function deleteRecommendation() {
     
     return await axios.delete(
-      `http://${serverHost}:8080/recommendations/${boardNum}`,
+      `https://${serverHost}:8080/recommendations/${boardNum}`,
       {
         withCredentials: true
       }

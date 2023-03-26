@@ -135,7 +135,7 @@ const OrderSaveForm = () => {
   // 서버로 주문등록하기
   async function save(paidMoney) {
     return await axios.post(
-      `http://${serverHost}:8080/orders`,
+      `https://${serverHost}:8080/orders`,
       {
         data: readyOrder,
         paidMoney: paidMoney

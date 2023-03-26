@@ -30,7 +30,7 @@ const ReplyRecommendationBoxForm = ({replyFormList}) => {
   // 서버로 댓글 수정 데이터 보내기
   async function updateReply(boardNum, replyNum, content) {
     return await axios.put(
-      `http://${serverHost}:8080/recommendations/${boardNum}/replies/${replyNum}`,
+      `https://${serverHost}:8080/recommendations/${boardNum}/replies/${replyNum}`,
       {
         content: content
       },
@@ -42,7 +42,7 @@ const ReplyRecommendationBoxForm = ({replyFormList}) => {
   // 서버로 댓글 삭제 요청 보내기
   async function deleteReply(boardNum, replyNum) {
     return await axios.delete(
-      `http://${serverHost}:8080/recommendations/${boardNum}/replies/${replyNum}`,
+      `https://${serverHost}:8080/recommendations/${boardNum}/replies/${replyNum}`,
       {
         withCredentials: true
       }
@@ -52,7 +52,7 @@ const ReplyRecommendationBoxForm = ({replyFormList}) => {
   // 서버에 댓글 등록 요청하기
   async function saveReply(boardNum, data) {
     return await axios.post(
-      `http://${serverHost}:8080/recommendations/${boardNum}/replies`,
+      `https://${serverHost}:8080/recommendations/${boardNum}/replies`,
       data,
       {
         withCredentials: true

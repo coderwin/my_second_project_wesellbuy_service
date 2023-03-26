@@ -63,7 +63,7 @@ const ItemListForm = () => {
   // 서버에서 상품 랭크(순위) 불러오기
   async function getItemRankList() {
     return await axios.get(
-      `http://${serverHost}:8080/items/rank/v1`
+      `https://${serverHost}:8080/items/rank/v1`
     );
   }
   // rankCardDatas에 상품목록 담기
@@ -90,7 +90,7 @@ const ItemListForm = () => {
     // data는 params
   async function getItemList() {
     return await axios.get(
-      `http://${serverHost}:8080/items`,
+      `https://${serverHost}:8080/items`,
       {
         params: data
       }
@@ -151,7 +151,7 @@ const ItemListForm = () => {
   // 서버에서 회원의 좋아요 목록 불러오기
   async function getLikesList() {
     return await axios.get(
-      `http://${serverHost}:8080/items/likes`,
+      `https://${serverHost}:8080/items/likes`,
       {
         withCredentials: true
       }

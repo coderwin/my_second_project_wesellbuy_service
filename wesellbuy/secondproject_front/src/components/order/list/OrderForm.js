@@ -75,7 +75,7 @@ const OrderForm = ({data, numPosition, datasLength, totalPages, searchCond}) => 
   // 서버로 취소 요청
   async function cancel(num) {
     return await axios.delete(
-      `http://${serverHost}:8080/orders/${num}`,
+      `https://${serverHost}:8080/orders/${num}`,
       {
         withCredentials: true
       }
