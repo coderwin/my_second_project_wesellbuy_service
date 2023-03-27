@@ -46,7 +46,7 @@ export const CustomContext = createContext(null);
 function App() {
 
   /// 변수 모음
-  const serverHost = "https://172.31.40.12";// 서버의 host
+  const serverHost = "http://172.31.40.12";// 서버의 host
 
   /// 상태 모음
   // 로그인/비로그인 확인을 위한 상태
