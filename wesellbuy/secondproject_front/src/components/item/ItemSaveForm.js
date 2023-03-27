@@ -147,7 +147,7 @@ const ItemSaveForm = () => {
   async function save(formData) {
 
     return await axios.post(
-      `https://${serverHost}:8080/items`,
+      `http://${serverHost}:8080/items`,
       formData,
       {
         headers: {

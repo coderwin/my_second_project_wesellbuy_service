@@ -130,14 +130,14 @@ const ItemUpdateForm = () => {
   }
   // 이미지 src 만들기
   function createSrc(storedFileName) {
-    return `https://${serverHost}:8080/items/images/${storedFileName}`;
+    return `http://${serverHost}:8080/items/images/${storedFileName}`;
   }
   // 상품 상세보기 데이터 불러오기
   async function getItemDetailInfo(boardNum) {
     // 서버에 item detail 요청하기
     // 누구든 볼수 있음 - 인증 불필요
     return await axios.get(
-      `https://${serverHost}:8080/items/${boardNum}`
+      `http://${serverHost}:8080/items/${boardNum}`
     );
   }
   
@@ -220,7 +220,7 @@ const ItemUpdateForm = () => {
   async function update(formData, boardNum) {
 
     return await axios.put(
-      `https://${serverHost}:8080/items/${boardNum}`,
+      `http://${serverHost}:8080/items/${boardNum}`,
       formData,
       {
         headers: {
@@ -330,7 +330,7 @@ const ItemUpdateForm = () => {
   async function deleteImage(boardNum, pictureNum) {
 
     return await axios.delete(
-      `https://${serverHost}:8080/items/${boardNum}/pictures/${pictureNum}`,
+      `http://${serverHost}:8080/items/${boardNum}/pictures/${pictureNum}`,
       {
         withCredentials: true
       }

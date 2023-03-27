@@ -133,7 +133,7 @@ const ItemDetailForm = () => {
     // 서버에 item detail 요청하기
     // 누구든 볼수 있음 - 인증 불필요
     return await axios.get(
-      `https://${serverHost}:8080/items/${itemNum}`
+      `http://${serverHost}:8080/items/${itemNum}`
     );
   }
 
