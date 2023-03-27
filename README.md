@@ -1,8 +1,8 @@
 # my_second_project_wesellbuy_service
 <!-- 설명 -->
 <div>
-  <h4>&nbsp;&nbsp;&nbsp;&nbsp;:arrow_forward:&nbsp;&nbsp;개인 토이프로젝트(wesellbuy_service_part)입니다.</h4>
-  <h4>&nbsp;&nbsp;&nbsp;&nbsp;:arrow_forward:&nbsp;&nbsp;회원, 배달원, 관리자로 구성된 중고 거래 플랫폼입니다.</h4>
+  <h4>&nbsp;&nbsp;&nbsp;&nbsp;:arrow_forward:&nbsp;&nbsp;토이프로젝트(wesellbuy_service_part)입니다.</h4>
+  <h4>&nbsp;&nbsp;&nbsp;&nbsp;:arrow_forward:&nbsp;&nbsp;비회원, 회원, 배달원, 관리자로 구성되어 있는 사용자간 거래가 가능한 온라인 유통 플랫폼입니다.</h4>
 </div>
 <br />
 
