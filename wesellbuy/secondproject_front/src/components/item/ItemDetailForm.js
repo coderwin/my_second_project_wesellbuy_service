@@ -126,14 +126,14 @@ const ItemDetailForm = () => {
   }
   // 이미지 src 만들기
   function createSrc(storedFileName) {
-    return `https://${serverHost}:8080/items/images/${storedFileName}`;
+    return `${serverHost}:8080/items/images/${storedFileName}`;
   }
   // 상품 상세보기 데이터 불러오기
   async function getItemDetailInfo() {
     // 서버에 item detail 요청하기
     // 누구든 볼수 있음 - 인증 불필요
     return await axios.get(
-      `http://${serverHost}:8080/items/${itemNum}`
+      `${serverHost}:8080/items/${itemNum}`
     );
   }
 

@@ -34,7 +34,7 @@ const ItemDetailBoxForm = () => {
   // 서버에서 좋아요 리스트 불러오기
   async function getLikesList() {
     return await axios.get(
-      `http://${serverHost}:8080/items/likes`,
+      `${serverHost}:8080/items/likes`,
       {
         withCredentials: true
       }
@@ -45,7 +45,7 @@ const ItemDetailBoxForm = () => {
   async function deleteLikes(boardNum, likesNum) {
     // 서버에 좋아요 삭제 요청하기
     return await axios.delete(
-      `http://${serverHost}:8080/items/${boardNum}/likes`,
+      `${serverHost}:8080/items/${boardNum}/likes`,
       {
         withCredentials: true
       }
@@ -55,7 +55,7 @@ const ItemDetailBoxForm = () => {
   async function saveLikes(boardNum) {
     // 서버에 좋아요 등록 요청하기
     return await axios.post(
-      `http://${serverHost}:8080/items/${boardNum}/likes`,
+      `${serverHost}:8080/items/${boardNum}/likes`,
       {},
       {
         withCredentials: true
@@ -126,7 +126,7 @@ const ItemDetailBoxForm = () => {
   async function deleteItem() {
     
     return await axios.delete(
-      `http://${serverHost}:8080/items/${boardNum}`,
+      `${serverHost}:8080/items/${boardNum}`,
       {
         withCredentials: true
       }

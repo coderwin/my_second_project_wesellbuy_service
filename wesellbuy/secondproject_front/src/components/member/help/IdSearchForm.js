@@ -57,7 +57,7 @@ const IdSearchForm = () => {
         setLoding(true);
         // json으로 바꾸기
         return await axios.get(
-            `http://${serverHost}:8080/members/find/id`,
+            `${serverHost}:8080/members/find/id`,
             {params: data}
         );
     }

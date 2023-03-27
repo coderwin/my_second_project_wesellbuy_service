@@ -115,7 +115,7 @@ const CustomerServiceSaveForm = () => {
   async function save() {
 
     return await axios.post(
-      `http://${serverHost}:8080/customerservices`,
+      `${serverHost}:8080/customerservices`,
       data,
       {
         withCredentials: true

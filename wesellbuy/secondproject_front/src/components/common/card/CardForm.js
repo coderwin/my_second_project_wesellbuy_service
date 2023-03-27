@@ -123,7 +123,7 @@ const CardForm = ({data, likesList, memberInfo, addItemLikesList, countOutInItem
   async function deleteLikes(boardNum) {
     // 서버에 좋아요 삭제 요청하기
     return await axios.delete(
-      `http://${serverHost}:8080/items/${boardNum}/likes`,
+      `${serverHost}:8080/items/${boardNum}/likes`,
       {
         withCredentials: true
       }
@@ -133,7 +133,7 @@ const CardForm = ({data, likesList, memberInfo, addItemLikesList, countOutInItem
   async function saveLikes(boardNum) {
     // 서버에 좋아요 등록 요청하기
     return await axios.post(
-      `http://${serverHost}:8080/items/${boardNum}/likes`,
+      `${serverHost}:8080/items/${boardNum}/likes`,
       {},
       {
         withCredentials: true
@@ -142,7 +142,7 @@ const CardForm = ({data, likesList, memberInfo, addItemLikesList, countOutInItem
   }
   // 이미지 src 만들기
   function createSrc(storedFileName) {
-    return `http://${serverHost}:8080/items/images/${storedFileName}`;  
+    return `${serverHost}:8080/items/images/${storedFileName}`;  
   }
   // 상세보기 클릭했을 때
   // 상품 상세보기로 간다

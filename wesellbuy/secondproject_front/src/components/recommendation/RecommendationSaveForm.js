@@ -124,7 +124,7 @@ const RecommendationSaveForm = () => {
   async function save(formData) {
 
     return await axios.post(
-      `http://${serverHost}:8080/recommendations`,
+      `${serverHost}:8080/recommendations`,
       formData,
       {
         headers: {

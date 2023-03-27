@@ -56,7 +56,7 @@ const OrderSaveForm = () => {
   }
   // 결제하기 클릭했을 때
   async function handlePayClick() {
-    const paidMoney = window.prompt("지불금액을 입력하세요", "숫자만 가능합니다.");
+    const paidMoney = window.prompt("지불금액을 입력하세요");
     // 숫자인지 아닌지 조사하기
     // 숫자아닌 게 하나라도 있으면 안 된다
     const pattern = /[^0-9]/;// 숫자가 아닌 것 조사
@@ -135,7 +135,7 @@ const OrderSaveForm = () => {
   // 서버로 주문등록하기
   async function save(paidMoney) {
     return await axios.post(
-      `http://${serverHost}:8080/orders`,
+      `${serverHost}:8080/orders`,
       {
         data: readyOrder,
         paidMoney: paidMoney

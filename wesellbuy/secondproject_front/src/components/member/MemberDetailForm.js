@@ -54,7 +54,7 @@ const MemberDetailForm = () => {
     const {num} = JSON.parse(sessionStorage.getItem("LOGIN_MEMBER"));
     // 서버에 회원정보 요청
     return await axios.get(
-      `http://${serverHost}:8080/members/${num}`,
+      `${serverHost}:8080/members/${num}`,
       {
         withCredentials: true
       }
@@ -91,7 +91,7 @@ const MemberDetailForm = () => {
   //   console.log(`storedFileName : ${storedFileName}`);
   //   // 서버에 이미지 요청
   //   axios.get(
-  //     `http://${serverHost}:8080/members/images/${storedFileName}`
+  //     `${serverHost}:8080/members/images/${storedFileName}`
   //   )
   //   .then((response) => {
   //     // 요청 성공
@@ -112,7 +112,7 @@ const MemberDetailForm = () => {
     const {num} = JSON.parse(sessionStorage.getItem("LOGIN_MEMBER"));
     // 서버에 탈퇴요청 보낸다.
     return await axios.delete(
-      `http://${serverHost}:8080/members/${num}`,
+      `${serverHost}:8080/members/${num}`,
       {
         withCredentials: true
       }
@@ -296,7 +296,7 @@ const MemberDetailForm = () => {
             <Row className="d-flex justify-content-center">
               <Form.Label>프로필</Form.Label>
               <Col sm={12}>
-              {data.selfPictureForm ? <Image className="img-responsive profil" roundedCircle src={`http://${serverHost}:8080/members/images/${data.selfPictureForm.storedFileName}`} /> 
+              {data.selfPictureForm ? <Image className="img-responsive profil" roundedCircle src={`${serverHost}:8080/members/images/${data.selfPictureForm.storedFileName}`} /> 
               : <Image className="profil" roundedCircle src={noImage} />}
               </Col>
             </Row>
