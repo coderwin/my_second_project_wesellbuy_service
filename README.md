@@ -13,9 +13,10 @@
 <div>
   <h3>:dart: Used Statck</h3>
   
-  &nbsp;&nbsp;&nbsp;&nbsp;:arrow_forward:&nbsp;&nbsp;Back: Java 17, Spring Boot, Spring MVC, JPA, QueryDsl, Data JPA<br />
-  &nbsp;&nbsp;&nbsp;&nbsp;:arrow_forward:&nbsp;&nbsp;Front: react.js<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;:arrow_forward:&nbsp;&nbsp;Back: Java 17, Spring Boot, Spring MVC, JPA, QueryDsl, Data JPA, Swagger<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;:arrow_forward:&nbsp;&nbsp;Front: react.js, React-Bootstrap, axios, async-await<br />
   &nbsp;&nbsp;&nbsp;&nbsp;:arrow_forward:&nbsp;&nbsp;DB: MySQL, H2(dev)<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;:arrow_forward:&nbsp;&nbsp;Infra: AWS(EC2 - Linux 2 AMI, Route 53), Nginx <br />
   &nbsp;&nbsp;&nbsp;&nbsp;:arrow_forward:&nbsp;&nbsp;IDE: IntelliJ, VS Code, Git Bash<br />
   &nbsp;&nbsp;&nbsp;&nbsp;:arrow_forward:&nbsp;&nbsp;SVC: Github <br />
 </div>
