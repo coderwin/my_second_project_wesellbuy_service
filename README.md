@@ -21,6 +21,12 @@
   &nbsp;&nbsp;&nbsp;&nbsp;:arrow_forward:&nbsp;&nbsp;SVC: Github <br />
 </div>
 <!-- 사이트 링크 연결 -->
+<h3>
+  <a href="www.wesellbuy.shop" 
+     title="사이트 둘러보기">
+    :link: 사이트 둘러보기
+  </a>(www.wesellbuy.shop)
+</h3>
 
 <!-- detail 링크 연결 -->
 <h3>
