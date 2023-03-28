@@ -22,10 +22,10 @@
 </div>
 <!-- 사이트 링크 연결 -->
 <h3>
-  <a href="www.wesellbuy.shop" 
+  <a href="http://www.wesellbuy.shop" 
      title="사이트 둘러보기">
     :link: 사이트 둘러보기
-  </a>(www.wesellbuy.shop)
+  </a>(http://www.wesellbuy.shop)
 </h3>
 
 <!-- detail 링크 연결 -->
