@@ -236,15 +236,17 @@ public class MemberController {
     /**
      * writer : 이호진
      * init : 2023.02.08
-     * updated by writer :
-     * update :
+     * updated by writer : 이호진
+     * update : 2023.03.30
      * description : 모든 회원 정보 가져오기 + 검색
      *
      * comment : 쿼리스트링으로 넘어오는
      *           > 검색 데이터 id, country, city, createDate를 받고
      *           > 페이징 데이터 size, page를 받는다.
+     *
+     * update : > GetMapping /admin 추가
      */
-    @GetMapping
+    @GetMapping("/admin")
     @ApiOperation("회원 목록")
     public Result<Page<MemberDetailForm>> selectList(MemberSearchCond cond, Pageable pageable) {
         // 검색하기
