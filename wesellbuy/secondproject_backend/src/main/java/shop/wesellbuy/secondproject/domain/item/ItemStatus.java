@@ -6,7 +6,7 @@ package shop.wesellbuy.secondproject.domain.item;
  * init : 2023.01.14
  * updated by writer :
  * update :
- * description : 상품 등록 상태(등록(REGISTER), 삭제(DELTE))알려준다.
+ * description : 상품 등록 상태(등록(REGISTER), 삭제(DELETE))알려준다.
  */
 public enum ItemStatus {
 

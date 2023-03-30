@@ -177,7 +177,7 @@ public class MemberJpaRepositoryImpl implements MemberJpaRepositoryCustom{
         List<Member> result = query
                 .select(member)
                 .from(member)
-                .join(member.selfPicture, selfPicture).fetchJoin()
+                .leftJoin(member.selfPicture, selfPicture).fetchJoin()
                 .where(memberIdLike(memberSearchCond.getId()),
                         memberCountryLike(memberSearchCond.getCountry()),
                         memberCityLike(memberSearchCond.getCity()),

@@ -62,7 +62,7 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addInterceptor(new AdminCheckInterceptor())
                 .order(4)
                 .addPathPatterns(
-                        "/orders/admin"
+                        "/**/admin"
                 );
 
 //        // Cors 처리 인터셉터 등록

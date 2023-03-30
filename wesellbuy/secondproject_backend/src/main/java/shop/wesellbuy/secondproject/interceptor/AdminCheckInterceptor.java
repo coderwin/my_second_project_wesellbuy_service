@@ -51,7 +51,7 @@ public class AdminCheckInterceptor implements HandlerInterceptor {
         LoginMemberSessionForm sessionForm = (LoginMemberSessionForm)session.getAttribute(SessionConst.LOGIN_MEMBER);
         String memberId = sessionForm.getId();
         // deliver로 시작하는 아이디를 가졌는지 확인한다.
-        String pattern = "^admin\\w*$";
+        String pattern = "^admin[\\w]*$";
         boolean result = memberId.matches(pattern);
         // admin이라는 아이디로 시작하면 통과
         if(result == true) {

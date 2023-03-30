@@ -255,6 +255,26 @@ public class MemberController {
         return result;
     }
 
+    /**
+     * writer : 이호진
+     * init : 2023.03.30
+     * updated by writer :
+     * update :
+     * description : 회원 탈퇴 관리자용
+     */
+    @DeleteMapping("/{num}/admin")
+    @ApiOperation("회원 탈퇴 관리자용")
+    public ResponseEntity<Result<String>> withdrawalForAdmin(@PathVariable int num, HttpServletRequest request) {
+        // 회원 탈퇴
+        memberService.withdrawal(num);
+        // responseEntity body 생성
+        log.info("관리자용 회원탈퇴 성공 -> member num : {}", num);
+        String successMsg = "회원 탈퇴 완료";
+        Result<String> body = new Result<>(successMsg);
+
+        return new ResponseEntity(body, HttpStatus.OK);
+    }
+
     //   ------------------------------methods using for admin end --------------------------------
 
 
