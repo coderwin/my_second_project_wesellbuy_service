@@ -129,14 +129,14 @@ const JoinForm = () => {
         }
     })
     .then((response) => {
-      console.log("요청 성공");
+      // console.log("요청 성공");
       // 가입성공 alert창 띄우기
       alert(response.data.data);
       // 로그인으로 이동
       navigation("/login");   
     })
     .catch((err) => {
-      console.log("요청 실패");
+      // console.log("요청 실패");
       // console.log(err);
       // 로딩중 해제하기
       setLoding(false);    

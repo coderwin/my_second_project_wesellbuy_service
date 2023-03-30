@@ -83,7 +83,7 @@ const OrderSaveForm = () => {
             // 요청 성공
             // loding = false
             setAllLoding(false);
-            console.log("요청 성공");
+            // console.log("요청 성공");
             alert(response.data.data);
             // 내 주문보기로 이동하기
             navigation("/order/list");
@@ -91,7 +91,7 @@ const OrderSaveForm = () => {
             // 요청 실패
             // loding = false
             setAllLoding(false);
-            console.log("요청 실패");
+            // console.log("요청 실패");
             // field 데이터가 잘못 입력된 에러
             if(err.response.data.errors) {
               // 순회하며 알려주기

@@ -60,7 +60,7 @@ const CustomerServiceSaveForm = () => {
         // 데이터 저장하기
         const response = await save();
         // 저장 성공
-        console.log("저장 성공");
+        // console.log("저장 성공");
         // loding false로
         setLoding(false);
         // 고객지원글 등록 완료 alert창 띄우기
@@ -71,7 +71,7 @@ const CustomerServiceSaveForm = () => {
         navigation(`/cs/list`);
       } catch(err) {
         // 요청 실패
-        console.log("저장 실패");
+        // console.log("저장 실패");
         // loding false로 
         setLoding(false);
         // 다른 에러일 경우
@@ -198,11 +198,11 @@ const CustomerServiceSaveForm = () => {
               className="mb-3"
             >
               <Row className="d-flex justify-content-center">
-                <Col sm={2}>
-                  <Button type="submit">등록</Button>
+                <Col sm={2} className="d-grid gap-2">
+                  <Button type="submit" size="lg">등록</Button>
                 </Col>
-                <Col sm={2}>
-                  <Button type="button" onClick={handleCancelClick}>취소</Button>
+                <Col sm={2} className="d-grid gap-2">
+                  <Button type="button" onClick={handleCancelClick} size="lg">취소</Button>
                 </Col>
               </Row>
             </Form.Group>

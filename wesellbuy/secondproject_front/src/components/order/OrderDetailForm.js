@@ -61,7 +61,7 @@ const OrderDetailForm = () => {
         // 주문 detail 불러오기
         const response = await getOrderDetailInfo();
         // 요청 성공
-        console.log("요청 성공");
+        // console.log("요청 성공");
         setLoding(false);
         // data 데이터 담기
         setData({
@@ -70,7 +70,7 @@ const OrderDetailForm = () => {
         });
       } catch(err) {
         // 요청 실패
-        console.log("요청 실패");
+        // console.log("요청 실패");
         // 데이터가이 없는 곳으로 입장했을 때
           // NotFound page로 이동(4xx error)
         const errMsg = "No value present";

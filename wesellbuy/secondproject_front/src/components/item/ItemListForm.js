@@ -75,13 +75,13 @@ const ItemListForm = () => {
       const {data} = await getItemRankList();
       setLoding(() => false);
       // 요청 성공
-      console.log("요청 성공");
+      // console.log("요청 성공");
       // cardDatas에 담기
       setRankCardDatas(() => data.data);
     } catch(err) {
       setLoding(() => false);
       // 요청 실패
-      console.log("요청 실패");
+      // console.log("요청 실패");
       // console.log(err);
     }
   }
@@ -105,14 +105,14 @@ const ItemListForm = () => {
       const {data} = await getItemList()
       // 요청 성공
       setLoding(false);
-      console.log("요청 성공");
+      // console.log("요청 성공");
       // cardDatas에 담기
       setCardDatas(() => data.data.content);
       setTotalPages(() => data.data.totalPages);
     } catch(err) {
       // 요청 실패
       setLoding(false);
-      console.log("요청 실패");
+      // console.log("요청 실패");
       // console.log(err);
     }
   } 
@@ -124,14 +124,14 @@ const ItemListForm = () => {
       const {data} = await getItemList()
       // 요청 성공
       setLoding(() => false);
-      console.log("요청 성공");
+      // console.log("요청 성공");
       // cardDatas에 담기
       setCardDatas(() => data.data.content);
       setTotalPages(() => data.data.totalPages);
     } catch(err) {
       // 요청 실패
       setLoding(() => false);
-      console.log("요청 실패");
+      // console.log("요청 실패");
       // console.log(err);
     }
   } 
@@ -174,7 +174,7 @@ const ItemListForm = () => {
       const response = await getLikesList();
       // 요청 성공
       setLoding(() => false);
-      console.log("요청 성공");
+      // console.log("요청 성공");
       // likesList에 담기
       setLikesList(() => {
         // sessionStorage에 담기
@@ -184,7 +184,7 @@ const ItemListForm = () => {
     } catch(err) {
       // 요청 실패
       setLoding(() => false);
-      console.log("요청 실패");
+      // console.log("요청 실패");
       // console.log(err);
     }
   }

@@ -46,7 +46,7 @@ const CustomerServiceListForm = () => {
       // loding false
       setLoding(false);
       // 요청 성공
-      console.log("요청 성공");
+      // console.log("요청 성공");
       // Listdatas에 담기
       setListDatas(data.data.content);
       setTotalPages(data.data.totalPages);
@@ -54,7 +54,7 @@ const CustomerServiceListForm = () => {
       // loding false
       setLoding(false);
       // 요청 실패
-      console.log("요청 실패");
+      // console.log("요청 실패");
       // console.log(err);
     }
   }
@@ -67,7 +67,7 @@ const CustomerServiceListForm = () => {
       // loding false
       setLoding(false);
       // 요청 성공
-      console.log("요청 성공");
+      // console.log("요청 성공");
       // Listdatas에 담기
       setListDatas(data.data.content);
       setTotalPages(data.data.totalPages);
@@ -75,7 +75,7 @@ const CustomerServiceListForm = () => {
       // loding false
       setLoding(false);
       // 요청 실패
-      console.log("요청 실패");
+      // console.log("요청 실패");
       // console.log(err);
     }
   }

@@ -39,6 +39,11 @@ import OrderListForSeller from './pages/order/OrderListForSeller';
 import OrderListForDeliver from './pages/order/OrderListForDeliver';
 import CustomerServiceSave from './pages/customerservice/CustomerServiceSave';
 import Loding from './components/Loding';
+import OrderListForAdmin from './pages/order/OrderListForAdmin';
+import MemberListForAdmin from './pages/member/MemberListForAdmin';
+import ItemListForAdmin from './pages/item/ItemListForAdmin';
+import CustomerServiceListForAdmin from './pages/customerservice/CustomerServiceListForAdmin';
+import RecommendationListForAdmin from './pages/recommendation/RecommendationListForAdmin';
 
 // context 만들기
 export const CustomContext = createContext(null);
@@ -132,6 +137,11 @@ function App() {
 
           {/* admin list for admin */}
           {/* 서버를 따로 만들어야 하지 않을까? */}
+          <Route path="/admin/order/list" element={<OrderListForAdmin />} /> 
+          <Route path="/admin/member/list" element={<MemberListForAdmin />} /> 
+          <Route path="/admin/item/list" element={<ItemListForAdmin />} /> 
+          <Route path="/admin/recommendation/list" element={<RecommendationListForAdmin />} /> 
+          <Route path="/admin/cs/list" element={<CustomerServiceListForAdmin />} /> 
 
           {/* 404 page */}
           <Route path="/*" element={<NotFound />} />

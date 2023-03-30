@@ -1,36 +1,36 @@
 import axios from 'axios';
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap';
-import PageButtonForm from '../common/pagebutton/PageButtonForm';
-import OrderSearchNavForSellerForm from './listForSeller/OrderSearchNavForSellerForm';
-import OrderListBoxForSellerForm from './listForSeller/OrderListBoxForSellerForm';
-import Loding from '../Loding';
-import '../../css/form.css';
 import { CustomContext } from '../../App';
+import PageButtonForm from '../common/pagebutton/PageButtonForm';
+import Loding from '../Loding';
+import ItemListBoxForAdminForm from './listForAdmin/ItemListBoxForAdminForm';
+import ItemSearchNavForAdminForm from './listForAdmin/ItemSearchNavForAdminForm';
 
 /**
- * Order list for seller component
+ * Item list for admin component
  * writer : 이호진
- * init : 2023.03.12
+ * init : 2023.03.28
  * updated by writer :
  * update :
- * description : 주문 목록 판매자용 component
+ * description : 상품 목록 관리자용 component
  */
-export const OrderListForSellerContext = createContext(null);
+export const ItemListForAdminContext = createContext(null); // ItemListForAdminContext Context
 
-const OrderListForSellerForm = () => {
+const ItemListForAdminForm = () => {
+
   /// 변수 모음
   // 검색 데이터 default 변수
   const defaultData = {
-    orderId: "", // 주문자 아이디
-    orderStatus: "", // 주문 상태
-    deliveryStatus: "", // 배달 상태
-    createData: "",// 추천합니다글 생성 날짜(shape : 0000-00-00) 
-    size: 10,// 페이지 size
+    name: "",// 상품명
+    memberId: "",// 판매자 아이디
+    dtype: "",// 종류
+    createData: "",// 상품 생성 날짜(shape : 0000-00-00) 
+    size: 20,// 페이지 size
     page: 0// 페이지 번호
   }
   const {serverHost} = useContext(CustomContext);
-
+  
   /// 상태 모음
   const [loding, setLoding] = useState(false);// 요청처리 상태
   const [data, setData] = useState(defaultData);// 검색 데이터 상태
@@ -45,14 +45,14 @@ const OrderListForSellerForm = () => {
     setLoding(true);
     try {
       // 서버에서 주문 목록 불러오기
-      const {data} = await getOrderList();
+      const {data} = await getItemList();
       // loding false
       setLoding(false);
       // 요청 성공
       // console.log("요청 성공");
-      setTotalPages(data.data.totalPages);
       // Listdatas에 담기
       setListDatas(data.data.content);
+      setTotalPages(data.data.totalPages);
     } catch(err) {
       // loding false
       setLoding(false);
@@ -65,14 +65,14 @@ const OrderListForSellerForm = () => {
   async function inputListDatasForSearch() {
     try {
       // 서버에서 주문 목록 불러오기
-      const {data} = await getOrderList();
+      const {data} = await getItemList();
       // loding false
       setLoding(false);
       // 요청 성공
       // console.log("요청 성공");
-      setTotalPages(data.data.totalPages);
       // Listdatas에 담기
       setListDatas(data.data.content);
+      setTotalPages(data.data.totalPages);
     } catch(err) {
       // loding false
       setLoding(false);
@@ -81,10 +81,10 @@ const OrderListForSellerForm = () => {
       // console.log(err);
     }
   }
-  // 서버에서 나의 주문 불러오기
-  async function getOrderList() {
+  // 서버에서 모든 추천합니다글 불러오기
+  async function getItemList() {
     return await axios.get(
-      `${serverHost}:8080/orders/seller`,
+      `${serverHost}:8080/items/admin`,
       {
         params: data,
         withCredentials: true
@@ -100,6 +100,7 @@ const OrderListForSellerForm = () => {
   }
   // page 데이터 바뀌면 data 변경한다
   function handlePageInDataChange(e) {
+    // console.log(`${e.target.name} : ${e.target.id}`);
     setData((data) => {
       return {
       ...data,
@@ -107,6 +108,7 @@ const OrderListForSellerForm = () => {
       }
     });
   }
+  
   // 찾기(Search) 버튼 클릭 했을 때
     // listDatas에 담아주기
   async function handleSearchClick() {
@@ -121,7 +123,6 @@ const OrderListForSellerForm = () => {
   }, []);
   // 검색할 때
   useEffect(() => {
-    // 주문 목록에 담기
     inputListDatasForSearch();
   }, [data]);
 
@@ -131,22 +132,22 @@ const OrderListForSellerForm = () => {
   if(loding) return(<Loding />);
 
   return (
-    <OrderListForSellerContext.Provider value={{data, handleDataChange, handleSearchClick, listDatas, totalPages}}>
+    <ItemListForAdminContext.Provider value={{data, handleDataChange, handleSearchClick, listDatas, totalPages}}>
       <Container className="body_text_center">
         <Row className="d-flex justify-content-center">
-          <Col sm={11}>
-            {/* 주문받은 상품 찾기 Nav */}
+          <Col sm={10}>
+            {/* 상품 찾기 Nav */}
             <Row>
               <Col md="12">
                 {/* 위쪽 Nav - 검색 */}
-                <OrderSearchNavForSellerForm />
+                <ItemSearchNavForAdminForm />
               </Col>
             </Row>
-            {/* 주문받은 상품 목록 box */}
+            {/* 상품 목록 box */}
             <Row id="top">
               <Col md="12">
-                {/* body - 주문받은 상품 목록  */}
-                <OrderListBoxForSellerForm />
+                {/* body - 상품 목록  */}
+                <ItemListBoxForAdminForm />
               </Col>
             </Row>
             {/* footer - 페이지 버튼 */}
@@ -164,8 +165,8 @@ const OrderListForSellerForm = () => {
           </Col>
         </Row>
       </Container>
-    </OrderListForSellerContext.Provider> 
+    </ItemListForAdminContext.Provider> 
   )
 }
 
-export default OrderListForSellerForm
+export default ItemListForAdminForm;

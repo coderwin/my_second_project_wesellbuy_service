@@ -144,7 +144,7 @@ const MemberDetailForm = () => {
     } catch(error) {
       // loding 상태 false
       setLoding(false);
-      console.log("탈퇴 요청 중 에러 발생");
+      // console.log("탈퇴 요청 중 에러 발생");
       // console.log(error);
       // 에러 상태 알리기
       const errMsg = "요청 처리 중 에러 발생";

@@ -60,7 +60,7 @@ const RecommendationUpdateForm = () => {
         // 추천합니다글 detail 불러오기
         const response = await getRecommendationDetailInfo(boardNum);
         // 요청 성공
-        console.log("요청 성공");
+        // console.log("요청 성공");
         setLoding(false);
         // data 데이터 담기
         setData({
@@ -76,7 +76,7 @@ const RecommendationUpdateForm = () => {
         createPictureNums(response.data.data.recommendationPictureFormList);
       } catch(err) {
         // 요청 실패
-        console.log("요청 실패");
+        // console.log("요청 실패");
         // 데이터가 없는 곳으로 입장했을 때
           // NotFound page로 이동(4xx error)
         const errMsg = "No value present";
@@ -141,7 +141,7 @@ const RecommendationUpdateForm = () => {
       // 데이터 저장하기
       const response = await update(formData, boardNum);
       // 저장 성공
-      console.log("수정 성공");
+      // console.log("수정 성공");
       // loding false로
       setLoding(false);
       // 고객지원글 수정 완료 alert창 띄우기
@@ -150,7 +150,7 @@ const RecommendationUpdateForm = () => {
       navigation(`/recommendation/${boardNum}`);
     } catch(err) {
       // 요청 실패
-      console.log("수정 실패");
+      // console.log("수정 실패");
       // loding false로 
       setLoding(false);
       // 다른 에러일 경우
@@ -258,7 +258,7 @@ const RecommendationUpdateForm = () => {
         // 서버로 이미지 삭제요청 보내기
         const response = await deleteImage(boardNum, e.target.id);
         // 요청 성공
-        console.log("요청 성공");
+        // console.log("요청 성공");
         alert(response.data.data);
         // 새로운 pictureForms
         const newPictureForms = data.recommendationPictureFormList.filter(
@@ -278,7 +278,7 @@ const RecommendationUpdateForm = () => {
         // pictureNums 만들기
         createPictureNums(newPictureForms);
       } catch(err) {
-        console.log("요청 실패");
+        // console.log("요청 실패");
         alert(err.response.data.errMsg);
       }
       return;

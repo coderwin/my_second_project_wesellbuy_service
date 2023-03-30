@@ -57,13 +57,13 @@ const OrderForSellerForm = ({data, numPosition, datasLength, totalPages, searchC
       // 요청 성공
       // loding = false
       setLoding(false);
-      console.log("요청 성공");
+      // console.log("요청 성공");
       alert(response.data.data);
       // deliveryResult 변경
       setDeliveryResult(true);
     } catch(err) {
       // 요청 실패
-      console.log("요청 실패");
+      // console.log("요청 실패");
       // loding = false
       setLoding(false);
       // 에러 메시지 보여주기

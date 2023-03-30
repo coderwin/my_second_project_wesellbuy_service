@@ -53,7 +53,7 @@ const RecommendationListForm = () => {
       // 요청 성공
       // loding false
       setLoding(false);
-      console.log("요청 성공");
+      // console.log("요청 성공");
       // cardDatas에 담기
       setCardDatas(data.data.content);
       setTotalPages(data.data.totalPages);
@@ -61,7 +61,7 @@ const RecommendationListForm = () => {
       // loding false
       setLoding(false);
       // 요청 실패
-      console.log("요청 실패");
+      // console.log("요청 실패");
       // console.log(err);
     }
   }
@@ -74,7 +74,7 @@ const RecommendationListForm = () => {
       // 요청 성공
       // loding false
       setLoding(false);
-      console.log("요청 성공");
+      // console.log("요청 성공");
       // cardDatas에 담기
       setCardDatas(data.data.content);
       setTotalPages(data.data.totalPages);
@@ -82,7 +82,7 @@ const RecommendationListForm = () => {
       // loding false
       setLoding(false);
       // 요청 실패
-      console.log("요청 실패");
+      // console.log("요청 실패");
       // console.log(err);
     }
   }

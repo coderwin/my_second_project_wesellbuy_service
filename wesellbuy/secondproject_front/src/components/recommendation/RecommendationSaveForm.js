@@ -72,7 +72,7 @@ const RecommendationSaveForm = () => {
       // 데이터 저장하기
       const response = await save(formData);
       // 저장 성공
-      console.log("저장 성공");
+      // console.log("저장 성공");
       // loding false로
       setLoding(false);
       // 상품 등록 완료 alert창 띄우기
@@ -83,7 +83,7 @@ const RecommendationSaveForm = () => {
       navigation(`/recommendation/${boardNum}`);
     } catch(err) {
       // 요청 실패
-      console.log("저장 실패");
+      // console.log("저장 실패");
       // loding false로 
       setLoding(false);
       // console.log(err);
@@ -222,7 +222,7 @@ const RecommendationSaveForm = () => {
             className="mb-3"
             >
               <Form.Label column sm="3">
-                  sellerId <span className='important'>*</span>
+                  SELLERID <span className='important'>*</span>
               </Form.Label>
               <Col sm="5">
                   <Form.Control

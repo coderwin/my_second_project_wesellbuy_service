@@ -166,7 +166,7 @@ const MemberUpdateForm = () => {
       // 데이터 서버로 보내기
       const response = await update(formData);
       // 요청 성공
-      console.log("요청 성공");
+      // console.log("요청 성공");
       // loding을 false로
       setLoding(false);
       // 수정 완료 alert창 띄우기
@@ -175,7 +175,7 @@ const MemberUpdateForm = () => {
       navigation("/mydetail");
     } catch(err) {
       // 요청 실패
-      console.log("요청 실패");
+      // console.log("요청 실패");
       // loding false로
       setLoding(false);
       // newErrorMsgs 객체 생성하기

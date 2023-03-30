@@ -1,14 +1,14 @@
-import axios from 'axios';
-import React, { useContext, useState } from 'react'
-import { Button } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
-import { CustomContext } from '../../../App';
-import Loding from '../../Loding';
+import axios from "axios";
+import { useContext, useState } from "react";
+import { Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import { CustomContext } from "../../../App";
+import Loding from "../../Loding";
 
 /**
  * Order of Order box component
  * writer : 이호진
- * init : 2023.03.11
+ * init : 2023.03.28
  * updated by writer :
  * update :
  * description : 주문목록의 주문 component
@@ -17,13 +17,14 @@ import Loding from '../../Loding';
  *                 > searchCond : 주문목록 찾기 위한 조건 데이터 prop
  *                 > numPosition : 현재 페이지에서 주문목록의 자리선정위한 번호 prop
  *                 > totalPages : 전체 페이지수 prop
+ *                 > datasLength : 데이터 총 개수
  * 
  * comment : 주문취소 완료되었을 때 
  *              -> 배송상태 처리 필요
  *                -> 현재 : 취소전 그대로 유지될 것으로 예상
  *                -> 수정한다면 : 배송취소가 생겼으면 좋겠군
  */
-const OrderForm = ({data, numPosition, datasLength, totalPages, searchCond}) => {
+const OrderForAdminForm = ({data, numPosition, datasLength, totalPages, searchCond}) => {
   
   /// 변수 모음
   const navigation = useNavigate();// navigation
@@ -136,7 +137,7 @@ const OrderForm = ({data, numPosition, datasLength, totalPages, searchCond}) => 
     cancelBtnBoxView = "취소완료";
   }
 
-  if(loding) return (<Loding />);// 클라이언트 요청 처리 view
+  if(loding) return (<tr><td><Loding /></td></tr>);// 클라이언트 요청 처리 view
 
   return (
     <tr>
@@ -147,6 +148,10 @@ const OrderForm = ({data, numPosition, datasLength, totalPages, searchCond}) => 
         {/* 첫페이지가 1번부터 => 순서가 안 맞군*/}
         {searchCond.size * (totalPages - searchCond.page - 1) + datasLength - numPosition}
         {/* 첫페이지가 마지막번호부터 -> 어떻게 하지? */}
+      </th>
+      {/* 주문 회원아이디 */}
+      <th>
+          {data.id}
       </th>
       {/* 주문날짜 */}
       <th>
@@ -168,4 +173,4 @@ const OrderForm = ({data, numPosition, datasLength, totalPages, searchCond}) => 
   )
 }
 
-export default OrderForm
+export default OrderForAdminForm;

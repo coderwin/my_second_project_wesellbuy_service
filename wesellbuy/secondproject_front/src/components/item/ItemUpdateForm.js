@@ -82,7 +82,7 @@ const ItemUpdateForm = () => {
         // 상품 detail 불러오기
         const response = await getItemDetailInfo(boardNum);
         // 요청 성공
-        console.log("요청 성공");
+        // console.log("요청 성공");
         setLoding(false);
         // data 데이터 담기
         setData({
@@ -103,7 +103,7 @@ const ItemUpdateForm = () => {
         createPictureNums(response.data.data.pictureForms);
       } catch(err) {
         // 요청 실패
-        console.log("요청 실패");
+        // console.log("요청 실패");
         // 상품이 없는 곳으로 입장했을 때
           // NotFound page로 이동(4xx error)
         const errMsg = "No value present";
@@ -169,7 +169,7 @@ const ItemUpdateForm = () => {
       // 데이터 저장하기
       const response = await update(formData, boardNum);
       // 저장 성공
-      console.log("상품 수정 성공");
+      // console.log("상품 수정 성공");
       // loding false로
       setLoding(false);
       // 상품 수정 완료 alert창 띄우기
@@ -180,7 +180,7 @@ const ItemUpdateForm = () => {
       navigation(`/item/${itemNum}`);
     } catch(err) {
       // 요청 실패
-      console.log("상품 수정 실패");
+      // console.log("상품 수정 실패");
       // loding false로 
       setLoding(false);
       // 다른 에러일 경우
@@ -302,7 +302,7 @@ const ItemUpdateForm = () => {
         // 서버로 이미지 삭제요청 보내기
         const response = await deleteImage(boardNum, e.target.id);
         // 요청 성공
-        console.log("요청 성공");
+        // console.log("요청 성공");
         alert(response.data.data);
         // 새로운 pictureForms
         const newPictureForms = data.pictureForms.filter((picture) => {
@@ -320,7 +320,7 @@ const ItemUpdateForm = () => {
         // pictureNums 만들기
         createPictureNums(newPictureForms);
       } catch(err) {
-        console.log("요청 실패");
+        // console.log("요청 실패");
         alert(err.response.data.errMsg);
       }
       return;

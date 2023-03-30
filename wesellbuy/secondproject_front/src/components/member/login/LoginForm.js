@@ -116,7 +116,7 @@ export const LoginForm = () => {
         }
       );
       // 요청 성공
-      console.log("요청 성공");
+      // console.log("요청 성공");
       // sessionStorage에 로그인 정보 저장
       saveInSessionStorage("LOGIN_MEMBER", result.data.data);
       // data의 rememberId 값을 통해 쿠키에 아이디 기억 정보 저장
@@ -136,7 +136,7 @@ export const LoginForm = () => {
 
     } catch(error) {
       // 요청 실패
-      console.log("요청 실패");
+      // console.log("요청 실패");
       // loding false로 바꿈
       setLoding(false);
       // error 상태에 데이터 넣기

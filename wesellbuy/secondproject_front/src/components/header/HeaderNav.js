@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import '../../css/googlefont.css';
 import '../../css/form.css';
 import { CustomContext } from '../../App';
+import HeaderNavForAdmin from './HeaderNavForAdmin';
 
 
 const HeaderNav = () => {
@@ -53,34 +54,46 @@ const HeaderNav = () => {
 
   /// view 모음
   let view = null;
+  let viewForAdmin = null; // 관리자일 때 view
   // member의 아이디에 deliver로 시작하면 Nav 보이기
   const pattern = /^deliver[\w]*$/;
+  // member의 아이디에 admin로 시작하면 Nav 보이기
+  const patternForAdmin = /^admin[\w]*$/;
   if(memberInfo) {
     if(pattern.test(memberInfo.id)) {
       view = <Nav.Link onClick={handleDeliveryListClick}>배달목록</Nav.Link>;
+    // 관리자 아이디일 때  
+    } else if(patternForAdmin.test(memberInfo.id)) {
+      viewForAdmin = <HeaderNavForAdmin />;
     }
   }
 
   return (
-    <Navbar bg="light" expand="lg">
-      <Container>
-      <Navbar.Brand className="googlefont mitr mousePointer" onClick={handleHomeClick} >WeSellBuy</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <NavDropdown title="상품" id="basic-nav-dropdown">
-              <NavDropdown.Item onClick={handleItemSaveClick}>
-                상품등록
-              </NavDropdown.Item> 
-            </NavDropdown>
-            <Nav.Link onClick={handleRecommendationClick}>추천합니다</Nav.Link>
-            <Nav.Link onClick={handleCustomerServiceClick}>고객지원</Nav.Link>
-            {/* 배달목록 */}
-            {view}
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    <>
+      { 
+        viewForAdmin === null ?
+        (<Navbar bg="light" expand="lg">
+          <Container>
+          <Navbar.Brand className="googlefont mitr mousePointer" onClick={handleHomeClick} >WeSellBuy</Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="me-auto">
+                <NavDropdown title="상품" id="basic-nav-dropdown">
+                  <NavDropdown.Item onClick={handleItemSaveClick}>
+                    상품등록
+                  </NavDropdown.Item> 
+                </NavDropdown>
+                <Nav.Link onClick={handleRecommendationClick}>추천합니다</Nav.Link>
+                <Nav.Link onClick={handleCustomerServiceClick}>고객지원</Nav.Link>
+                {/* 배달목록 */}
+                {view}
+              </Nav>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>) :
+        viewForAdmin
+      }
+    </>
   )
 }
 

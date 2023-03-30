@@ -91,14 +91,14 @@ const CardWithHeaderForm = ({data, likesList, memberInfo, addItemLikesList, coun
         try {
           const response = await deleteLikes(boardNum);
           // 요청 성공
-          console.log("요청 성공");
+          // console.log("요청 성공");
           // sessionStorage에서 빼기
           countOutInItemLikesList(likesList, boardNum);
           // likesState = false로 바꾸기
           setLikesState(() => false);
         } catch(err) {
           // 요청 실패
-          console.log("요청 실패");
+          // console.log("요청 실패");
           // console.log(err);
         }
       // likesState === false
@@ -107,14 +107,14 @@ const CardWithHeaderForm = ({data, likesList, memberInfo, addItemLikesList, coun
         try {
           const response = await saveLikes(boardNum);
           // 요청 성공
-          console.log("요청 성공");
+          // console.log("요청 성공");
           // sessionStorage에 저장
           addItemLikesList(likesList, boardNum);
           // likesState = true로 바꾸기
           setLikesState(() => true);
         } catch(err) {
           // 요청 실패
-          console.log("요청 실패");
+          // console.log("요청 실패");
           // console.log(err);
         }
       }

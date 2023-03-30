@@ -44,7 +44,7 @@ const ReplyWritingForm = ({saveReply}) => {
       const response = await saveReply(boardNum, data);
       // 요청 성공
       setAllLoding(false);
-      console.log("요청 성공");
+      // console.log("요청 성공");
       alert(response.data.data);
       // 데이터는 비우기
       setData(
@@ -53,7 +53,7 @@ const ReplyWritingForm = ({saveReply}) => {
     } catch(err) {
       // 요청 실패
       setAllLoding(false);
-      console.log("요청 실패");
+      // console.log("요청 실패");
       // console.log(err);
     }
   }

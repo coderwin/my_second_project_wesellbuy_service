@@ -60,7 +60,7 @@ const ReplyForm = ({OnDeleteRepliesChange, reply, updateReply, deleteReply}) => 
         const response = await deleteReply(boardNum, data.num);
         // 요청 성공
         setLoding(false);
-        console.log("삭제 성공");
+        // console.log("삭제 성공");
         alert(response.data.data);
         // mode 변경하기
         setMode("delete");
@@ -82,14 +82,14 @@ const ReplyForm = ({OnDeleteRepliesChange, reply, updateReply, deleteReply}) => 
       const response = await updateReply(boardNum, data.num, data.content);
       // 요청 성공
       setLoding(false);
-      console.log("요청 성공");
+      // console.log("요청 성공");
       alert(response.data.data);
       // read 모드로 변경하기
       setMode("read");
     } catch(err) {
       // 요청 실패
       setLoding(false);
-      console.log("요청 실패");
+      // console.log("요청 실패");
       alert(err.response.data.errMsg);
       // read 모드로 변경하기
       setMode("read");

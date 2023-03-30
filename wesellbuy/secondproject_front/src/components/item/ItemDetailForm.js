@@ -64,7 +64,7 @@ const ItemDetailForm = () => {
       // 상품 detail 불러오기
       const response = await getItemDetailInfo();
       // 요청 성공
-      console.log("요청 성공");
+      // console.log("요청 성공");
       setLoding(false);
       // data 데이터 담기
       setData({
@@ -90,7 +90,7 @@ const ItemDetailForm = () => {
         return;
       }
       setLoding(false);
-      console.log("요청 실패");
+      // console.log("요청 실패");
       // console.log(err);    
       // errMsg 보여주기
       alert(err.response.data.errMsg);

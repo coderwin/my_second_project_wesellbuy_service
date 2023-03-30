@@ -55,14 +55,14 @@ const RecommendationDetailBoxForm = () => {
         const response = await deleteRecommendation();
         // 요청 성공
         setLoding(false);
-        console.log("요청 성공");
+        // console.log("요청 성공");
         alert(response.data.data);
         // 추천합니다 list로 간다
         navigation("/recommendation/list");
       } catch(err) {
         // 요청 실패
         setLoding(false);
-        console.log("요청 실패");
+        // console.log("요청 실패");
         // console.log(err);
       }
     }

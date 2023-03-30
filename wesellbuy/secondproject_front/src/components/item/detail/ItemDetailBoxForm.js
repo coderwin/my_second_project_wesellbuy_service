@@ -73,7 +73,7 @@ const ItemDetailBoxForm = () => {
         try {
           const response = await deleteLikes(boardNum);
           // 요청 성공
-          console.log("요청 성공");
+          // console.log("요청 성공");
           const itemNum = Number(boardNum);
           // sessionStorage에서 빼기
           countOutInItemLikesList(likesList, itemNum);
@@ -85,7 +85,7 @@ const ItemDetailBoxForm = () => {
           });
         } catch(err) {
           // 요청 실패
-          console.log("요청 실패");
+          // console.log("요청 실패");
           // console.log(err);
         }
       // likesState === false
@@ -94,7 +94,7 @@ const ItemDetailBoxForm = () => {
         try {
           const response = await saveLikes(boardNum);
           // 요청 성공
-          console.log("요청 성공");
+          // console.log("요청 성공");
           const itemNum = Number(boardNum);
           // sessionStorage에 저장
           addItemLikesList(likesList, itemNum);
@@ -106,7 +106,7 @@ const ItemDetailBoxForm = () => {
           });
         } catch(err) {
           // 요청 실패
-          console.log("요청 실패");
+          // console.log("요청 실패");
           // console.log(err);
         }
       }
@@ -145,14 +145,14 @@ const ItemDetailBoxForm = () => {
         const response = await deleteItem();
         // 요청 성공
         setLoding(false);
-        console.log("요청 성공");
+        // console.log("요청 성공");
         alert(response.data.data);
         // "/"로 돌아간다
         navigation("/");
       } catch(err) {
         // 요청 실패
         setLoding(false);
-        console.log("요청 실패");
+        // console.log("요청 실패");
         // console.log(err);
       }
     }

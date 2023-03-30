@@ -31,13 +31,13 @@ const ItemRankBoxForm = () => {
       // 서버에서 상품 목록 불러오기
       const response = await getItemRankList();
       // 요청 성공
-      console.log("요청 성공");
+      // console.log("요청 성공");
       // 요청 끝
       // datas에 담기
       setDatas(response.data.data);
     } catch(err) {
       // 요청 실패
-      console.log("요청 실패");
+      // console.log("요청 실패");
       // console.log(err);
     }
   }
